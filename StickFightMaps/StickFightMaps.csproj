@@ -95,8 +95,14 @@
       <Content Include="..\.gitignore">
         <Link>.gitignore</Link>
       </Content>
+      <Content Include="..\README.md">
+        <Link>README.md</Link>
+      </Content>
       <Content Include="AssetsEmbedded\AssetsEmbedded" />
       <Content Include="AssetsEmbedded\AssetsEmbedded.manifest" />
+      <Content Include="ThunderStore\icon.png" />
+      <Content Include="ThunderStore\icon.psd" />
+      <Content Include="ThunderStore\manifest.json" />
       <EmbeddedResource Include="AssetsEmbedded\sticklevels" />
       <Content Include="AssetsEmbedded\sticklevels.manifest" />
       <Content Include="publish.ps1" />
@@ -123,7 +129,7 @@
         <CallTarget Targets="ReadPackageVersionFromOutputAssembly">
             <Output TaskParameter="TargetOutputs" PropertyName="PackageVersion" />
         </CallTarget>
-        <Exec Command="powershell.exe -ExecutionPolicy RemoteSigned -File &quot;$(ProjectDir)publish.ps1&quot; -Version &quot;$(PackageVersion.Remove($(PackageVersion.LastIndexOf('.')), 2))&quot; -Target &quot;$(ConfigurationName)&quot; -TargetPath &quot;$(TargetDir.TrimEnd('\'))&quot; -TargetAssembly &quot;$(TargetFileName)&quot; -RoundsPath &quot;$(RoundsFolder.TrimEnd('\'))&quot; -ProjectPath &quot;$(ProjectDir.TrimEnd('\'))&quot;" />
+        <Exec Command="powershell.exe -ExecutionPolicy RemoteSigned -File &quot;$(ProjectDir)publish.ps1&quot; -Version &quot;$(PackageVersion.Remove($(PackageVersion.LastIndexOf('.')), 2))&quot; -Target &quot;$(ConfigurationName)&quot; -TargetPath &quot;$(TargetDir.TrimEnd('\'))&quot; -TargetAssembly &quot;$(TargetFileName)&quot; -RoundsPath &quot;$(RoundsFolder.TrimEnd('\'))&quot; -ProjectPath &quot;$(ProjectDir.TrimEnd('\'))&quot; -SolutionPath &quot;$(SolutionDir.TrimEnd('\'))&quot;" />
     </Target>
 
 </Project>
