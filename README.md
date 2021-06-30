@@ -6,12 +6,14 @@ Adds the levels/maps of the game Stick Fight: The Game
 - Woods2
 
 ---
-##Changelist
+
+## Changelist
 - v1.0.0 Inital release
     - Added Woods1
     - Added Woods2
 
 ---
+
 ## How to install
 Use [ThunderStore Mod manager](https://rounds.thunderstore.io/package/BossSloth/BSC/)  
 [List of all mods](https://rounds.thunderstore.io/)
