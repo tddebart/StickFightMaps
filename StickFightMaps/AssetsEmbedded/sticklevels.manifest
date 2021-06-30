@@ -1,0 +1,76 @@
+ManifestFileVersion: 0
+CRC: 1441059023
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1f9cfbc11f37f761e657f22d079f7cb0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2841bdc159877cda5e4a9128e738f89e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 68
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: e03bbea4b97d46f4c9ab319c13db5d20, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1a525680416b4390645f727046ab9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 398c79e97d8d5684dbe3db29a1c8036e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 65659dfa25631ac458374f81c3c48cf1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1718af4bc5ba3de4881e59bc0d835fc0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6d9341cccd19696489daf27e70dc1cde, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3ba096de1899e6e41b48689b82235406, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 350597bf7c4b06444a1dc23fbca36644, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 331
+  Script: {instanceID: 0}
+Assets:
+- Assets/Scene/Stickfight/1 Woods/Woods2.unity
+- Assets/Scene/Custom/Rounds_Modding.unity
+- Assets/Scene/Stickfight/1 Woods/Woods1.unity
+Dependencies: []
