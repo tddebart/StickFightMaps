@@ -4,10 +4,8 @@
   "website_url": "https://github.com/tddebart/StickFightMaps",
   "description": "Adds the levels/maps of the game Stick Fight: The Game",
   "dependencies": [
-    "willis81808-UnboundLib-2.1.4",
+    "willis81808-UnboundLib-2.2.0",
     "willis81808-MMHook-1.0.0",
-    "BepInEx-BepInExPack_ROUNDS-5.4.1100",
-    "Pykess-PlayerJumpPatch-0.0.1",
-    "Pykess-CardChoiceSpawnUniqueCardPatch-0.0.0"
+    "BepInEx-BepInExPack_ROUNDS-5.4.1100"
   ]
 }

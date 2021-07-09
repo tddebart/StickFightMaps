@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1441059023
+CRC: 385252576
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1f9cfbc11f37f761e657f22d079f7cb0
+    Hash: 780a566aac8750ec24b983884a97d696
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2841bdc159877cda5e4a9128e738f89e
+    Hash: cffac20ca01a1a42443f638f3a38bbdc
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -31,16 +31,12 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 65
   Script: {instanceID: 0}
-- Class: 68
-  Script: {instanceID: 0}
 - Class: 82
   Script: {instanceID: 0}
 - Class: 83
   Script: {instanceID: 0}
 - Class: 104
   Script: {instanceID: 0}
-- Class: 114
-  Script: {fileID: 11500000, guid: e03bbea4b97d46f4c9ab319c13db5d20, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1a525680416b4390645f727046ab9, type: 3}
 - Class: 114
@@ -67,10 +63,9 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
-- Class: 331
-  Script: {instanceID: 0}
 Assets:
 - Assets/Scene/Stickfight/1 Woods/Woods2.unity
-- Assets/Scene/Custom/Rounds_Modding.unity
+- Assets/Scene/Stickfight/1 Woods/Woods4.unity
+- Assets/Scene/Stickfight/1 Woods/Woods3.unity
 - Assets/Scene/Stickfight/1 Woods/Woods1.unity
 Dependencies: []

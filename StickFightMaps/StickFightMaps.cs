@@ -1,5 +1,5 @@
-﻿using System;
-using BepInEx;
+﻿using BepInEx;
+using HarmonyLib;
 using Jotunn.Utils;
 using UnboundLib;
 using UnityEngine;
@@ -14,12 +14,15 @@ namespace StickFightMaps
         
         private const string ModId = "com.bosssloth.rounds.StickFightMaps";
         private const string ModName = "StickFightMaps";
-        public const string Version = "1.0.0";
-        
-        internal static AssetBundle levelAsset;
+        public const string Version = "0.1.0";
+
+        private static AssetBundle levelAsset;
 
         private void Start()
         {
+            var harmony = new Harmony(ModId);
+            harmony.PatchAll();
+            
             levelAsset = AssetUtils.LoadAssetBundleFromResources("sticklevels", typeof(StickFightMaps).Assembly);
             if (levelAsset == null)
             {
