@@ -1,5 +1,6 @@
 ﻿using System;
 using HarmonyLib;
+using Photon.Pun;
 using UnboundLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +13,12 @@ namespace StickFightMaps
     {
         private static void Prefix(Scene scene, MapManager __instance)
         {
+            if (StickFightMaps.boxOrg == null)
+            {
+                StickFightMaps.boxOrg = PhotonNetwork.Instantiate("4 Map Objects/Box", new Vector3(1000,1000), Quaternion.Euler(Vector3.zero), 0, null);
+                StickFightMaps.boxOrg.hideFlags = HideFlags.HideAndDontSave;
+            }
+            
             foreach (Transform obj in scene.GetRootGameObjects()[0].GetComponentsInChildren<Transform>())
             {
                 obj.gameObject.layer = 0;
