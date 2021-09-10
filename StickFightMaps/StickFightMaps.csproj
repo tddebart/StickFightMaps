@@ -68,8 +68,11 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnboundLib, Version=2.2.0.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
+        <Reference Include="UnboundLib, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\Unity.TextMeshPro.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.dll</HintPath>
@@ -86,6 +89,12 @@
         <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
         </Reference>
@@ -100,7 +109,16 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="MonoBehaviours\Bomb.cs" />
+        <Compile Include="MonoBehaviours\BossSlothPhysicsObject.cs" />
         <Compile Include="MonoBehaviours\Crate.cs" />
+        <Compile Include="MonoBehaviours\CreateHinge.cs" />
+        <Compile Include="MonoBehaviours\SpawnObjectAfterDelay.cs" />
+        <Compile Include="MonoBehaviours\Spin.cs" />
+        <Compile Include="MonoBehaviours\SpinPart.cs" />
+        <Compile Include="MonoBehaviours\TestCol.cs" />
+        <Compile Include="Patches\LegRayCasters.cs" />
+        <Compile Include="Patches\Map.cs" />
         <Compile Include="Patches\MapLoaderPatch.cs" />
         <Compile Include="Patches\PhotonMapObjectPatch.cs" />
         <Compile Include="StickFightMaps.cs" />

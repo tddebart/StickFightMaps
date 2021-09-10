@@ -1,10 +1,11 @@
 ManifestFileVersion: 0
-CRC: 3641504589
+CRC: 137246033
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: sticklevels
-      Dependencies: {}
+      Dependencies:
+        Dependency_0: stickobjects
     Info_1:
       Name: stickobjects
       Dependencies: {}

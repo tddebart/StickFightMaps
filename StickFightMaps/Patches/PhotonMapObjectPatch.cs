@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Reflection;
 using HarmonyLib;
 using Photon.Pun;
+using StickFightMaps.MonoBehaviours;
+using UnboundLib;
 using UnityEngine;
 
 namespace StickFightMaps.Patches
@@ -35,7 +37,7 @@ namespace StickFightMaps.Patches
                     if (__instance.gameObject.name == "Crate2")
                     {
                         var crateReal = PhotonNetwork.Instantiate("CrateReal", (transform = __instance.transform).position, transform.rotation, 0, null);
-                        crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
+                        //crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
                         //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
                     }
                     else if (__instance.gameObject.name == "Crate2Big")
@@ -49,13 +51,46 @@ namespace StickFightMaps.Patches
                         var crateReal = PhotonNetwork.Instantiate("CrateLongReal", (transform = __instance.transform).position, transform.rotation, 0, null);
                         crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
                         //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
+                    } else if (__instance.gameObject.name == "CubeLong")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("CubeLong", (transform = __instance.transform).position, transform.rotation, 0, null);
+                        crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
+                        //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
+                    } else if (__instance.gameObject.name == "CubeSpinPart")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("CubeSpinPart", (transform = __instance.transform).position, transform.rotation, 0, null);
+                        crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
+                        crateReal.GetComponent<PhotonView>().RPC("GetParentAndApply", RpcTarget.All);
+                        //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
+                    } else if (__instance.gameObject.name == "CubeLongStripe")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("CubeLongStripe", (transform = __instance.transform).position, transform.rotation, 0, null);
+                        crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
+                        //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
+                    } else if (__instance.gameObject.name == "Bomb")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("Bomb", (transform = __instance.transform).position, transform.rotation, 0, null);
+                        crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
+                        //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
+                    } 
+                    else if(__instance.gameObject.name.Contains("(hingeL)"))
+                    {
+                        //TODO: why is it not scyning across clients
+                        var crateReal = PhotonNetwork.Instantiate("trapDoorL", (transform = __instance.transform).position, transform.rotation, 0);
+                        crateReal.GetComponent<PhotonView>().RPC("doRotation", RpcTarget.All);
+                    }
+                    else if(__instance.gameObject.name.Contains("(hingeR)"))
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("trapDoorR", (transform = __instance.transform).position, transform.rotation, 0);
+                        crateReal.GetComponent<PhotonView>().RPC("doRotation", RpcTarget.All);
                     }
                     else
                     {
-                        PhotonNetwork.Instantiate("4 Map Objects/" + __instance.gameObject.name.Split(new char[]
+                        var box = PhotonNetwork.Instantiate("4 Map Objects/" + __instance.gameObject.name.Split(new char[]
                         {
                             char.Parse(" ")
                         })[0], (transform = __instance.transform).position, transform.rotation, 0, null);
+                        box.name += " " + __instance.name;
                     }
                 }
 
@@ -64,6 +99,19 @@ namespace StickFightMaps.Patches
                 ___waitingToBeRemoved = true;
             }
             return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(PhotonMapObject), "Start")]
+    class mapObjectStart
+    {
+        public static void Prefix()
+        {
+            if (!StickFightMaps.didWarning)
+            {
+                UnityEngine.Debug.LogWarning("[StickFightMaps] Just ignore this error below i can't get rid of it");
+                StickFightMaps.didWarning = true;
+            }
         }
     }
 }

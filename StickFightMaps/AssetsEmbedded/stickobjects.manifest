@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3239199627
+CRC: 1889160165
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aef0c674b4bdfafe5347a1bf4590a2ce
+    Hash: f5323a9ba977123df7fb338d59e518f5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1c6961e85cd5c42b3f3c2216ca03b821
+    Hash: aa947d72271b5048fa29f3d8944f7110
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -27,26 +27,71 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 50
   Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
 - Class: 61
   Script: {instanceID: 0}
 - Class: 62
   Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: ec7135702ff4fca4faca1952ef4a3700, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a9d8f8028444153478d5de806dedb27c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 788917b36ff46094a94d23338a22f58a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 59f6e554977e2b2499208a5d0e889bc4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bbb7b9541a112aa4a8adaa80a5bd4867, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: c7d079d4457716f4eb39ba3ba5545f9c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7dd2dfb568d582c42a79311a90b3fb32, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fc02aae8cb0d19842b7f21023fbfcae5, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 398c79e97d8d5684dbe3db29a1c8036e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a99bad3a64857c0498d35a569a7ff906, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7793135c1510dab40a606823b4ef2dcb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d95122cc3cee1c34da2fd40b3e09e1c0, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e066b6d123ae7d40bc0464ecb0ae0d3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
   Script: {instanceID: 0}
 - Class: 212
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 Assets:
+- Assets/Material/crateDesert.mat
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateReal.prefab
+- Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeSpinPart.prefab
+- Assets/Texture2D/Castle_Platform1.png
+- Assets/Scene/Stickfight/0 Prefabs/3 Factory/A_Explosion_Timed_Detonation.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateRealBig.prefab
+- Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLongStripe.prefab
+- Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLong.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateLongReal.prefab
+- Assets/Scene/Stickfight/0 Prefabs/3 Factory/ExplosionBig.prefab
+- Assets/Texture2D/Crate1.png
+- Assets/Scene/Stickfight/0 Prefabs/3 Factory/BombReal.prefab
 Dependencies: []

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BepInEx;
 using HarmonyLib;
 using Jotunn.Utils;
@@ -7,6 +8,7 @@ using Sonigon;
 using Sonigon.Internal;
 using StickFightMaps.MonoBehaviours;
 using UnboundLib;
+using UnboundLib.Utils;
 using UnityEngine;
 
 namespace StickFightMaps
@@ -26,10 +28,16 @@ namespace StickFightMaps
 
         internal static GameObject boxOrg = null;
 
+        internal static StickFightMaps instance;
+
+        internal static bool didWarning;
+
         private void Start()
         {
             var harmony = new Harmony(ModId);
             harmony.PatchAll();
+
+            instance = this;
             
             // Load assetBundles
             levelAsset = AssetUtils.LoadAssetBundleFromResources("sticklevels", typeof(StickFightMaps).Assembly);
@@ -51,22 +59,13 @@ namespace StickFightMaps
             #region Create CrateReal
             // Create CrateReal
             var crate = levelObjects.LoadAsset<GameObject>("CrateReal");
-
-            // Add photonView
-            var view = crate.AddComponent<PhotonView>();
-            view.Group = 0;
-            view.prefixField = -1;
-            view.observableSearch = PhotonView.ObservableSearch.AutoFindAll;
-            view.Synchronization = ViewSynchronization.UnreliableOnChange;
-            view.OwnershipTransfer = OwnershipOption.Takeover;
-            view.ObservedComponents = new List<Component>()
-            {
-                crate.GetComponent<NetworkPhysicsObject>()
-            };
+            
+            // Add physics object
+            crate.AddComponent<BossSlothPhysicsObject>().DoThings();
             
             // Add Crate Mono
             crate.AddComponent<Crate>();
-            
+
             PhotonNetwork.PrefabPool.RegisterPrefab("CrateReal", crate);
             #endregion
 
@@ -75,17 +74,8 @@ namespace StickFightMaps
             // Create CrateRealBig
             var crateBig = levelObjects.LoadAsset<GameObject>("CrateRealBig");
 
-            // Add photonView
-            var view1 = crateBig.AddComponent<PhotonView>();
-            view1.Group = 0;
-            view1.prefixField = -1;
-            view1.observableSearch = PhotonView.ObservableSearch.AutoFindAll;
-            view1.Synchronization = ViewSynchronization.UnreliableOnChange;
-            view1.OwnershipTransfer = OwnershipOption.Takeover;
-            view1.ObservedComponents = new List<Component>()
-            {
-                crateBig.GetComponent<NetworkPhysicsObject>()
-            };
+            // Add physics object
+            crateBig.AddComponent<BossSlothPhysicsObject>().DoThings();
             
             // Add Crate Mono
             crateBig.AddComponent<Crate>();
@@ -98,18 +88,9 @@ namespace StickFightMaps
 
             // Create CrateLongReal
             var crateLong = levelObjects.LoadAsset<GameObject>("CrateLongReal");
-
-            // Add photonView
-            var view2 = crateLong.AddComponent<PhotonView>();
-            view2.Group = 0;
-            view2.prefixField = -1;
-            view2.observableSearch = PhotonView.ObservableSearch.AutoFindAll;
-            view2.Synchronization = ViewSynchronization.UnreliableOnChange;
-            view2.OwnershipTransfer = OwnershipOption.Takeover;
-            view2.ObservedComponents = new List<Component>()
-            {
-                crateLong.GetComponent<NetworkPhysicsObject>()
-            };
+            
+            // Add physics object
+            crateLong.AddComponent<BossSlothPhysicsObject>().DoThings();
             
             // Add Crate Mono
             crateLong.AddComponent<Crate>();
@@ -117,9 +98,100 @@ namespace StickFightMaps
             PhotonNetwork.PrefabPool.RegisterPrefab("CrateLongReal", crateLong);
 
             #endregion
+
+            // #region Create CubeLong
+            // // Create CrateLongReal
+            // var cubeLong = levelObjects.LoadAsset<GameObject>("CubeLong");
+            //
+            // // Add physics object
+            // cubeLong.AddComponent<BossSlothPhysicsObject>().DoThings();
+            //
+            // PhotonNetwork.PrefabPool.RegisterPrefab("CubeLong", cubeLong);
+            //
+            // #endregion
+            //
+            // #region Create CubeLongReal
+            // // Create CrateLongReal
+            // var CubeLongStripe = levelObjects.LoadAsset<GameObject>("CubeLongStripe");
+            //
+            // // Add physics object
+            // CubeLongStripe.AddComponent<BossSlothPhysicsObject>().DoThings();
+            //
+            // PhotonNetwork.PrefabPool.RegisterPrefab("CubeLongStripe", CubeLongStripe);
+            //
+            // #endregion
+            //
+            // #region Create CrateSpin
+            // // Create CrateSpin
+            // var cubeSpin = levelObjects.LoadAsset<GameObject>("CubeSpinPart");
+            //
+            // // Add physics object
+            // cubeSpin.AddComponent<BossSlothPhysicsObject>().DoThings();
+            // cubeSpin.AddComponent<SpinPart>();
+            //
+            // PhotonNetwork.PrefabPool.RegisterPrefab("CubeSpinPart", cubeSpin);
+            //
+            // #endregion
+            //
+            // #region Create Bomb
+            // // Create CrateSpin
+            // var bomb = levelObjects.LoadAsset<GameObject>("BombReal");
+            //
+            // // Add physics object
+            // bomb.AddComponent<BossSlothPhysicsObject>().DoThings();
+            //
+            // var objDelay = bomb.AddComponent<SpawnObjectAfterDelay>();
+            // //objDelay.objectToSpawn = levelObjects.LoadAsset<GameObject>("A_Explosion_Timed_Detonation");
+            // objDelay.objectToSpawn = levelObjects.LoadAsset<GameObject>("ExplosionBig");
+            // objDelay.secondsBeforeSpawn = 20;
+            // objDelay.removeSelf = true;
+            // objDelay.specificSpawnRotation = new Vector3(0, 90, 0);
+            //
+            // bomb.AddComponent<Bomb>();
+            //
+            // PhotonNetwork.PrefabPool.RegisterPrefab("Bomb", bomb);
+            //
+            // #endregion
+
             
-            Unbound.RegisterMaps(levelAsset);
+            #region Create trapDoor left
+
+            var trapDoorL = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
+            trapDoorL.AddComponent<BossSlothPhysicsObject>();
+            DontDestroyOnLoad(trapDoorL);
+            trapDoorL.transform.Translate(new Vector3(1000,0,0));
+            var hinge = trapDoorL.AddComponent<CreateHinge>();
+            hinge.right = false;
+            hinge.runAwake = false;
+            this.ExecuteAfterSeconds(0.5f, () =>
+            {
+                hinge.runAwake = true;
+            });
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorL", trapDoorL);
+            
+            #endregion
+            
+            #region Create trapDoor right
+
+            var trapDoorR = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
+            trapDoorR.AddComponent<BossSlothPhysicsObject>();
+            DontDestroyOnLoad(trapDoorR);
+            trapDoorR.transform.Translate(new Vector3(1000,0,0));
+            var hinge2 = trapDoorR.AddComponent<CreateHinge>();
+            hinge2.right = true;
+            hinge2.runAwake = false;
+            this.ExecuteAfterSeconds(0.5f, () =>
+            {
+                hinge2.runAwake = true;
+            });
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorR", trapDoorR);
+            
+            #endregion
+
+            LevelManager.RegisterMaps(levelAsset, "StickFight");
         }
-        
+
     }
 }
