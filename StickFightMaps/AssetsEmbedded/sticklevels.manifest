@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3663621908
+CRC: 4156379833
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5eecf038041f0aa7f83e814847af0c73
+    Hash: 26afd74c6c9dc44848ae57892531cc6f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 002b301b01dd42b1e11fe7d03ad12485
+    Hash: bb2330de9b6fcf4b7777874ec97199b0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -36,6 +36,8 @@ ClassTypes:
 - Class: 62
   Script: {instanceID: 0}
 - Class: 65
+  Script: {instanceID: 0}
+- Class: 68
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -68,6 +70,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: fc02aae8cb0d19842b7f21023fbfcae5, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: d5be6e094ca142d479096cf0366af4f9, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 398c79e97d8d5684dbe3db29a1c8036e, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
@@ -87,6 +91,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 3ba096de1899e6e41b48689b82235406, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 350597bf7c4b06444a1dc23fbca36644, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b1edcfed3d4e66443871a73f3ccbf70a, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 157
@@ -116,7 +122,9 @@ Assets:
 - Assets/Scene/Stickfight/2 Desert/Desert1.unity
 - Assets/Scene/Stickfight/1 Woods/Woods2.unity
 - Assets/Scene/Stickfight/1 Woods/Woods4.unity
+- Assets/Scene/Stickfight/4 Castle/Castle8.unity
 - Assets/Scene/Stickfight/1 Woods/Woods3.unity
+- Assets/Scene/Stickfight/4 Castle/Castle7.unity
 - Assets/Scene/Stickfight/4 Castle/Castle3.unity
 - Assets/Scene/Stickfight/1 Woods/Woods1.unity
 - Assets/Scene/Stickfight/2 Desert/Desert4.unity
@@ -124,7 +132,9 @@ Assets:
 - Assets/Scene/Stickfight/2 Desert/Desert9.unity
 - Assets/Scene/Stickfight/4 Castle/Castle2.unity
 - Assets/Scene/Stickfight/2 Desert/Desert5.unity
+- Assets/Scene/Stickfight/4 Castle/Castle5b.unity
 - Assets/Scene/Stickfight/2 Desert/Desert3.unity
 - Assets/Scene/Stickfight/2 Desert/Desert10.unity
+- Assets/Scene/Stickfight/4 Castle/Castle6.unity
 Dependencies:
 - F:/Software developer/TheActualRoundsMod/StickFightMaps/StickFightMaps/AssetsEmbedded/stickobjects
