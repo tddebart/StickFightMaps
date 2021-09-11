@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections;
 using BepInEx;
 using HarmonyLib;
 using Jotunn.Utils;
 using Photon.Pun;
-using Sonigon;
-using Sonigon.Internal;
 using StickFightMaps.MonoBehaviours;
-using UnboundLib;
 using UnboundLib.Utils;
 using UnityEngine;
 
@@ -189,8 +185,40 @@ namespace StickFightMaps
             PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorR", trapDoorR);
             
             #endregion
+            
+            #region Create castle platform Fall
+
+            var platform = Instantiate(levelObjects.LoadAsset<GameObject>("Castle_Platform3(Fall)"));
+            DontDestroyOnLoad(platform);
+            platform.AddComponent<FallingPlatform>();
+            platform.AddComponent<PhotonView>();
+            platform.transform.Translate(new Vector3(0,200,1000));
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle_Platform", platform);
+            
+            #endregion
 
             LevelManager.RegisterMaps(levelAsset, "StickFight");
+        }
+        
+        public static IEnumerator setupThings(Transform obj)
+        {
+            var map = MapManager.instance.currentMap.Map;
+            var otherPlayersMostRecentlyLoadedLevel = (int) Traverse.Create(MapManager.instance).Field("otherPlayersMostRecentlyLoadedLevel").GetValue();
+            var levelID = (int) Traverse.Create(map).Field("levelID").GetValue();
+            var loadedForAll = otherPlayersMostRecentlyLoadedLevel == levelID;
+            while (MapTransition.isTransitioning || !GameManager.instance.battleOngoing || !GameManager.instance.isPlaying || !map.hasEntered )//&& !PhotonNetwork.OfflineMode && !loadedForAll)
+            {
+                yield return null;
+            }
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                var transform = obj.transform;
+                var phot = PhotonNetwork.Instantiate("castle_Platform", transform.position, transform.rotation);
+                phot.GetComponent<PhotonView>().RPC("RPCA_Setup", RpcTarget.All, obj.transform.lossyScale, obj.transform.position);
+            }
+            Destroy(obj.gameObject);
         }
 
         // private void Update()

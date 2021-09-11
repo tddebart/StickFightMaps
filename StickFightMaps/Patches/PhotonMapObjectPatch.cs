@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Reflection;
-using HarmonyLib;
+﻿using HarmonyLib;
 using Photon.Pun;
-using StickFightMaps.MonoBehaviours;
-using UnboundLib;
 using UnityEngine;
-using static MainMenuHandler;
 
 namespace StickFightMaps.Patches
 {
@@ -26,8 +19,7 @@ namespace StickFightMaps.Patches
             }
             ___counter += Mathf.Clamp(Time.deltaTime, 0f, 0.1f);
 
-            var otherPlayersMostRecentlyLoadedLevel =
-                (int) Traverse.Create(MapManager.instance).Field("otherPlayersMostRecentlyLoadedLevel").GetValue();
+            var otherPlayersMostRecentlyLoadedLevel = (int) Traverse.Create(MapManager.instance).Field("otherPlayersMostRecentlyLoadedLevel").GetValue();
             var levelID = (int) Traverse.Create(___map).Field("levelID").GetValue();
             var LoadedForAll = otherPlayersMostRecentlyLoadedLevel == levelID;
             if ((PhotonNetwork.OfflineMode && ___counter > 1f && ___map.hasEntered) || (___map && ___map.hasEntered && LoadedForAll))
@@ -38,7 +30,7 @@ namespace StickFightMaps.Patches
                     if (__instance.gameObject.name == "Crate2")
                     {
                         var crateReal = PhotonNetwork.Instantiate("CrateReal", (transform = __instance.transform).position, transform.rotation, 0, null);
-                        //crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
+                        crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
                         //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
                     }
                     else if (__instance.gameObject.name == "Crate2Big")

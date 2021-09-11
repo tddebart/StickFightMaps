@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 350006641
+CRC: 3663621908
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 28c769346fff77ab8b3890cc81638c53
+    Hash: 5eecf038041f0aa7f83e814847af0c73
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3c02ec68b1c37e44637eb8361301e412
+    Hash: 002b301b01dd42b1e11fe7d03ad12485
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -64,6 +64,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1a525680416b4390645f727046ab9, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: ec206d466165a3a45a4f3e6baabc0a91, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fc02aae8cb0d19842b7f21023fbfcae5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 398c79e97d8d5684dbe3db29a1c8036e, type: 3}
@@ -108,8 +110,8 @@ ClassTypes:
 - Class: 233
   Script: {instanceID: 0}
 Assets:
-- Assets/Scene/Stickfight/4 Castle/CastleT.unity
 - Assets/Scene/Stickfight/2 Desert/Desert6.unity
+- Assets/Scene/Stickfight/4 Castle/Castle5.unity
 - Assets/Scene/Stickfight/4 Castle/Castle1.unity
 - Assets/Scene/Stickfight/2 Desert/Desert1.unity
 - Assets/Scene/Stickfight/1 Woods/Woods2.unity

@@ -1,7 +1,5 @@
-﻿using Photon.Pun;
-using UnboundLib;
+﻿using UnboundLib;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace StickFightMaps.MonoBehaviours
 {

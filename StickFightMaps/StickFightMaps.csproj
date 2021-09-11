@@ -68,7 +68,7 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnboundLib, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null">
+        <Reference Include="UnboundLib, Version=2.7.1.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
         </Reference>
         <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -76,6 +76,9 @@
         </Reference>
         <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
@@ -88,6 +91,9 @@
         </Reference>
         <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
@@ -113,14 +119,20 @@
         <Compile Include="MonoBehaviours\BossSlothPhysicsObject.cs" />
         <Compile Include="MonoBehaviours\Crate.cs" />
         <Compile Include="MonoBehaviours\CreateHinge.cs" />
+        <Compile Include="MonoBehaviours\FallingPlatform.cs" />
         <Compile Include="MonoBehaviours\SpawnObjectAfterDelay.cs" />
         <Compile Include="MonoBehaviours\Spin.cs" />
         <Compile Include="MonoBehaviours\SpinPart.cs" />
         <Compile Include="MonoBehaviours\TestCol.cs" />
+        <Compile Include="Patches\CharacterCreatorItemEquipper.cs" />
+        <Compile Include="Patches\GameCrownHandler.cs" />
+        <Compile Include="Patches\HealthBar.cs" />
         <Compile Include="Patches\LegRayCasters.cs" />
         <Compile Include="Patches\Map.cs" />
         <Compile Include="Patches\MapLoaderPatch.cs" />
+        <Compile Include="Patches\MapTransition.cs" />
         <Compile Include="Patches\PhotonMapObjectPatch.cs" />
+        <Compile Include="Patches\ProjectileCollision.cs" />
         <Compile Include="StickFightMaps.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

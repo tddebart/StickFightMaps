@@ -1,6 +1,5 @@
 ﻿using System;
 using HarmonyLib;
-using Photon.Pun;
 using StickFightMaps.MonoBehaviours;
 using UnboundLib;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace StickFightMaps
     [HarmonyPatch(typeof(MapManager), "OnLevelFinishedLoading")]
     class MapManager_Patch_OnLevelFinishedLoading
     {
-        private static void Prefix(Scene scene, MapManager __instance)
+        private static void Postfix(Scene scene, MapManager __instance)
         {
             foreach (Transform obj in scene.GetRootGameObjects()[0].GetComponentsInChildren<Transform>())
             {
@@ -43,7 +42,18 @@ namespace StickFightMaps
                         Object.Destroy(obj.GetComponent<SpriteMask>());
                     });
                 }
+
+                if (obj.name.Contains("(Fall)"))
+                {
+                    StickFightMaps.instance.StartCoroutine(StickFightMaps.setupThings(obj));
+
+                    // obj.gameObject.AddComponent<FallingPlatform>();
+                    // var view = obj.gameObject.AddComponent<PhotonView>();
+                    // PhotonNetwork.AllocateViewID(view);
+                    // PhotonNetwork.RegisterPhotonView(view);
+                }
             }
         }
+        
     }
 }
