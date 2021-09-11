@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace StickFightMaps.Patches
 {
-    [HarmonyPatch(typeof(ProjectileCollision))]
+    [HarmonyPatch(typeof(ProjectileHit))]
         public class ProjectileCollisionPatch
         {
-            [HarmonyPatch("HitSurface")]
+            [HarmonyPatch("Hit")]
             [HarmonyPrefix]
-            public static void hitSurface(ProjectileCollision __instance, ref ProjectileHitSurface.HasToStop __result, GameObject projectile, HitInfo hit)
+            public static void hitSurface(HitInfo hit)
             {
-                if (hit.transform.name.Contains("(Fall)") && PhotonNetwork.IsMasterClient)
+                if (hit.transform.parent && hit.transform.parent.name.Contains("(Fall)") && PhotonNetwork.IsMasterClient)
                 {
                     hit.transform.gameObject.GetComponentInParent<PhotonView>().RPC("RPCA_Fall", RpcTarget.All);
                 }
