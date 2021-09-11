@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1447503705
+CRC: 350006641
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4f1c02287cf3fbd3a95699067455a474
+    Hash: 28c769346fff77ab8b3890cc81638c53
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3c02ec68b1c37e44637eb8361301e412
@@ -108,6 +108,7 @@ ClassTypes:
 - Class: 233
   Script: {instanceID: 0}
 Assets:
+- Assets/Scene/Stickfight/4 Castle/CastleT.unity
 - Assets/Scene/Stickfight/2 Desert/Desert6.unity
 - Assets/Scene/Stickfight/4 Castle/Castle1.unity
 - Assets/Scene/Stickfight/2 Desert/Desert1.unity

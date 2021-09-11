@@ -7,6 +7,7 @@ using Photon.Pun;
 using StickFightMaps.MonoBehaviours;
 using UnboundLib;
 using UnityEngine;
+using static MainMenuHandler;
 
 namespace StickFightMaps.Patches
 {
@@ -77,12 +78,12 @@ namespace StickFightMaps.Patches
                     {
                         //TODO: why is it not scyning across clients
                         var crateReal = PhotonNetwork.Instantiate("trapDoorL", (transform = __instance.transform).position, transform.rotation, 0);
-                        crateReal.GetComponent<PhotonView>().RPC("doRotation", RpcTarget.All);
+                        crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, false);
                     }
                     else if(__instance.gameObject.name.Contains("(hingeR)"))
                     {
                         var crateReal = PhotonNetwork.Instantiate("trapDoorR", (transform = __instance.transform).position, transform.rotation, 0);
-                        crateReal.GetComponent<PhotonView>().RPC("doRotation", RpcTarget.All);
+                        crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
                     }
                     else
                     {

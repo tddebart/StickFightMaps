@@ -155,36 +155,36 @@ namespace StickFightMaps
 
             
             #region Create trapDoor left
-
+            
             var trapDoorL = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
             trapDoorL.AddComponent<BossSlothPhysicsObject>();
             DontDestroyOnLoad(trapDoorL);
             trapDoorL.transform.Translate(new Vector3(1000,0,0));
-            var hinge = trapDoorL.AddComponent<CreateHinge>();
-            hinge.right = false;
-            hinge.runAwake = false;
-            this.ExecuteAfterSeconds(0.5f, () =>
-            {
-                hinge.runAwake = true;
-            });
-
+            //var hinge = trapDoorL.AddComponent<CreateHinge>();
+            //hinge.right = false;
+            //hinge.runAwake = false;
+            // this.ExecuteAfterSeconds(0.5f, () =>
+            // {
+            //     hinge.runAwake = true;
+            // });
+            
             PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorL", trapDoorL);
             
             #endregion
             
             #region Create trapDoor right
-
+            
             var trapDoorR = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
             trapDoorR.AddComponent<BossSlothPhysicsObject>();
             DontDestroyOnLoad(trapDoorR);
             trapDoorR.transform.Translate(new Vector3(1000,0,0));
-            var hinge2 = trapDoorR.AddComponent<CreateHinge>();
-            hinge2.right = true;
-            hinge2.runAwake = false;
-            this.ExecuteAfterSeconds(0.5f, () =>
-            {
-                hinge2.runAwake = true;
-            });
+            // var hinge2 = trapDoorR.AddComponent<CreateHinge>();
+            // hinge2.right = true;
+            // hinge2.runAwake = false;
+            // this.ExecuteAfterSeconds(0.5f, () =>
+            // {
+            //     hinge2.runAwake = true;
+            // });
 
             PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorR", trapDoorR);
             
@@ -193,5 +193,13 @@ namespace StickFightMaps
             LevelManager.RegisterMaps(levelAsset, "StickFight");
         }
 
+        // private void Update()
+        // {
+        //     if (Input.GetKeyDown(KeyCode.K) && PhotonNetwork.IsMasterClient)
+        //     {
+        //         var box = PhotonNetwork.Instantiate("4 Map Objects/Box", Vector3.zero, Quaternion.identity);
+        //         //box.AddComponent<SpringJoint2D>();
+        //     }
+        // }
     }
 }
