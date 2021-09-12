@@ -1,16 +1,19 @@
-﻿namespace StickFightMaps.Patches
+﻿using HarmonyLib;
+using UnityEngine;
+
+namespace StickFightMaps.Patches
 {
-    // [HarmonyPatch(typeof(MapTransitionPatch), "Move")]
-    // public class MapTransitionPatch
-    // {
-    //     public static void Prefix(GameObject target, Vector3 distance, Map targetMap = null)
-    //     {
-    //         if (target == null)
-    //         {
-    //             return;
-    //         }
-    //
-    //         return;
-    //     }
-    // }
+    [HarmonyPatch(typeof(MapTransition), "Move")]
+    public class MapTransitionPatchMove
+    {
+        public static bool Prefix(GameObject target, Vector3 distance, Map targetMap)
+        {
+            if (target == null)
+            {
+                return false;
+            }
+    
+            return true;
+        }
+    }
 }

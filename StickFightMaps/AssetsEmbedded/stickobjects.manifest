@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3130903104
+CRC: 891206805
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ac483170699fba0ac161228a5fe04fea
+    Hash: 4e435d52dc9cf4bc66824c0c41940a86
   TypeTreeHash:
     serializedVersion: 2
     Hash: 387764a771c266e4edaf16a8928a926b
@@ -90,6 +90,7 @@ ClassTypes:
 Assets:
 - Assets/Material/crateDesert.mat
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateReal.prefab
+- Assets/Texture2D/Beard_01.png
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeSpinPart.prefab
 - Assets/Texture2D/Castle_Platform1.png
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle_Platform3(Fall).prefab

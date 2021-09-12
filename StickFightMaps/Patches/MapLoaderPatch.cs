@@ -23,7 +23,13 @@ namespace StickFightMaps
                 if (obj.name.IndexOf("EDITOR", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     obj.gameObject.SetActive(false);
-                } 
+                }
+
+                if (obj.name.Contains("(Rope)"))
+                {
+                    obj.GetComponent<SpriteRenderer>().enabled = false;
+                    obj.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                }
                 else if (obj.name.IndexOf("NOT COL", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     // check if color was set to white in unity and change it back to white after 0.1 seconds because it changes

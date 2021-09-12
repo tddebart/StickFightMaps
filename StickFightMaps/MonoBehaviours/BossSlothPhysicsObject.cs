@@ -64,13 +64,13 @@ namespace StickFightMaps.MonoBehaviours
             };
             hinge.enableCollision = true;
             
-            var spring = obj.GetOrAddComponent<SpringJoint2D>();
-            spring.anchor = new Vector2(0.5f, 0);
-            spring.autoConfigureConnectedAnchor = true;
-            spring.enableCollision = true;
-            spring.dampingRatio = 0.25f;
+            // var spring = obj.GetOrAddComponent<SpringJoint2D>();
+            // spring.anchor = new Vector2(0.5f, 0);
+            // //spring.autoConfigureConnectedAnchor = true;
+            // spring.enableCollision = true;
+            // spring.dampingRatio = 0.25f;
 
-            
+
             var spriteObj = new GameObject("sprite");
             spriteObj.transform.parent = obj.transform;
             var ren = spriteObj.AddComponent<SpriteRenderer>();
@@ -82,6 +82,9 @@ namespace StickFightMaps.MonoBehaviours
             Destroy(obj.GetComponent<SpriteMask>());
 
             GetComponent<PhotonView>().Synchronization = ViewSynchronization.Unreliable;
+
+            if (obj.GetComponent<SpringJoint2D>())
+                obj.GetComponent<SpringJoint2D>().dampingRatio = 0.25f;
         }
     }
 }

@@ -12,9 +12,12 @@ namespace StickFightMaps.Patches
             [HarmonyPrefix]
             public static void hitSurface(HitInfo hit)
             {
-                if (hit.transform.parent && hit.transform.parent.name.Contains("(Fall)") && PhotonNetwork.IsMasterClient)
+                if (hit.transform&& hit.transform.parent && hit.transform.parent.name.Contains("(Fall)") && PhotonNetwork.IsMasterClient)
                 {
-                    hit.transform.gameObject.GetComponentInParent<PhotonView>().RPC("RPCA_Fall", RpcTarget.All);
+                    if (hit.transform.gameObject.GetComponentInParent<PhotonView>())
+                    {
+                        hit.transform.gameObject.GetComponentInParent<PhotonView>().RPC("RPCA_Fall", RpcTarget.All);
+                    }
                 }
             }
         }

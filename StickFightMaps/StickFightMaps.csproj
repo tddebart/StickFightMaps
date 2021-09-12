@@ -119,6 +119,7 @@
         <Compile Include="MonoBehaviours\BossSlothPhysicsObject.cs" />
         <Compile Include="MonoBehaviours\Crate.cs" />
         <Compile Include="MonoBehaviours\CreateHinge.cs" />
+        <Compile Include="MonoBehaviours\FallingCollision.cs" />
         <Compile Include="MonoBehaviours\FallingPlatform.cs" />
         <Compile Include="MonoBehaviours\SpawnObjectAfterDelay.cs" />
         <Compile Include="MonoBehaviours\Spin.cs" />
@@ -130,6 +131,7 @@
         <Compile Include="Patches\LegRayCasters.cs" />
         <Compile Include="Patches\Map.cs" />
         <Compile Include="Patches\MapLoaderPatch.cs" />
+        <Compile Include="Patches\MapObjet_Rope.cs" />
         <Compile Include="Patches\MapTransition.cs" />
         <Compile Include="Patches\PhotonMapObjectPatch.cs" />
         <Compile Include="Patches\ProjectileCollision.cs" />

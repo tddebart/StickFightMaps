@@ -24,13 +24,14 @@ namespace StickFightMaps.MonoBehaviours
         }
 
         [PunRPC]
-        public void RPCA_Setup(Vector3 scale, Vector3 position)
+        public void RPCA_Setup(Vector3 scale, Vector3 position, bool collideAnything = false)
         {
             UnityEngine.Debug.LogWarning("Location:" + position + " | " + "Scale: " + scale);
             UnityEngine.Debug.LogWarning("now");
             transform.parent = MapManager.instance.currentMap.Map.transform;
             transform.localScale = scale;
             transform.position = position;
+            GetComponentInChildren<FallingCollision>().enabled = !collideAnything;
         }
 
 

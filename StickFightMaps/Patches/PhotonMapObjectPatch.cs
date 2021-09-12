@@ -68,7 +68,6 @@ namespace StickFightMaps.Patches
                     } 
                     else if(__instance.gameObject.name.Contains("(hingeL)"))
                     {
-                        //TODO: why is it not scyning across clients
                         var crateReal = PhotonNetwork.Instantiate("trapDoorL", (transform = __instance.transform).position, transform.rotation, 0);
                         crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, false);
                     }
@@ -76,6 +75,14 @@ namespace StickFightMaps.Patches
                     {
                         var crateReal = PhotonNetwork.Instantiate("trapDoorR", (transform = __instance.transform).position, transform.rotation, 0);
                         crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
+                    } else if(__instance.gameObject.name.Contains("(Circle)"))
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("circle", (transform = __instance.transform).position, transform.rotation, 0);
+                        //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
+                    } else if(__instance.gameObject.name == "SpikeBall")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("SpikeBall", (transform = __instance.transform).position, transform.rotation, 0);
+                        //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
                     }
                     else
                     {
