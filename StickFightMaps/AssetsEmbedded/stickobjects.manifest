@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 891206805
+CRC: 1488657086
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4e435d52dc9cf4bc66824c0c41940a86
+    Hash: 5d054c98e956c89b3fafe6bd339756e2
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 387764a771c266e4edaf16a8928a926b
+    Hash: 2eea88415063c640db19c72b59a568cd
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -35,6 +35,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 65
   Script: {instanceID: 0}
+- Class: 68
+  Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
 - Class: 83
@@ -59,6 +61,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 7dd2dfb568d582c42a79311a90b3fb32, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fc02aae8cb0d19842b7f21023fbfcae5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d5be6e094ca142d479096cf0366af4f9, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 398c79e97d8d5684dbe3db29a1c8036e, type: 3}
 - Class: 114
@@ -88,12 +92,17 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
+- Assets/Texture2D/Castle_Chain1.png
+- Assets/default.mat
 - Assets/Material/crateDesert.mat
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateReal.prefab
 - Assets/Texture2D/Beard_01.png
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeSpinPart.prefab
 - Assets/Texture2D/Castle_Platform1.png
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle_Platform3(Fall).prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/PlatformLong.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/ExtraLongPlatform.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/SpikeBall.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/A_Explosion_Timed_Detonation.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateRealBig.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLongStripe.prefab
@@ -102,4 +111,5 @@ Assets:
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/ExplosionBig.prefab
 - Assets/Texture2D/Crate1.png
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/BombReal.prefab
+- Assets/Texture2D/Castle_Chain2.png
 Dependencies: []

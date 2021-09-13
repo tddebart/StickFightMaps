@@ -233,11 +233,69 @@ namespace StickFightMaps
             PhotonNetwork.PrefabPool.RegisterPrefab("circle", circle);
             
             #endregion
+            
+            #region Create SpikeBall
+
+            var spikeball = levelObjects.LoadAsset<GameObject>("SpikeBall");
+
+            spikeball.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in spikeball.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+            
+            
+            PhotonNetwork.PrefabPool.RegisterPrefab("spikeBall", spikeball);
+            
+            #endregion
+            
+            #region Create castle chain
+            
+            var chain = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box_Destructible"));
+            chain.AddComponent<BossSlothPhysicsObject>();
+            DontDestroyOnLoad(chain);
+            chain.transform.Translate(new Vector3(1500,0,0));
+            chain.transform.localScale = new Vector3(3.3f, 2.3f, 2);
+            Destroy(chain.GetComponent<SFPolygon>());
+            //Destroy(chain.GetComponent<DestructibleBoxDestruction>());
+            chain.name = "TrapDoorR(Trap)";
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("chain", chain);
+            
+            #endregion
+            
+            #region Create PlatformLong
+
+            var platLong = levelObjects.LoadAsset<GameObject>("PlatformLong");
+
+            platLong.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in platLong.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("platformLong", platLong);
+            
+            #endregion
+            
+            #region Create ExtraLongPlatform
+
+            var extraLongPlat = levelObjects.LoadAsset<GameObject>("ExtraLongPlatform");
+
+            extraLongPlat.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in extraLongPlat.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("extraLongPlatform", extraLongPlat);
+            
+            #endregion
 
             LevelManager.RegisterMaps(levelAsset, "StickFight");
         }
         
-        public static IEnumerator setupThings(Transform obj)
+        public static IEnumerator setupThingsPlatform(Transform obj)
         {
             var map = MapManager.instance.currentMap.Map;
             var otherPlayersMostRecentlyLoadedLevel = (int) Traverse.Create(MapManager.instance).Field("otherPlayersMostRecentlyLoadedLevel").GetValue();

@@ -3,6 +3,7 @@ using Photon.Pun;
 using Sonigon;
 using UnboundLib;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace StickFightMaps.MonoBehaviours
 {
@@ -85,6 +86,65 @@ namespace StickFightMaps.MonoBehaviours
 
             if (obj.GetComponent<SpringJoint2D>())
                 obj.GetComponent<SpringJoint2D>().dampingRatio = 0.25f;
+        }
+
+        [PunRPC]
+        public void RPCA_SetupChain(int chainID)
+        {
+            var obj = gameObject;
+            //obj.transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
+            //Destroy(obj.GetComponent<BoxCollider2D>());
+            Destroy(obj.GetComponent<SpriteRenderer>());
+            if (obj.transform.childCount > 1)
+            {
+                Destroy(obj.transform.GetChild(0).gameObject);
+                //Destroy(obj.transform.GetChild(1).gameObject);
+            }
+            
+            var spriteObj = new GameObject("sprite");
+            spriteObj.layer = 17;
+            spriteObj.transform.parent = obj.transform;
+            var ren = spriteObj.AddComponent<SpriteRenderer>();
+            ren.sprite = StickFightMaps.levelObjects.LoadAsset<Sprite>("Castle_Chain" + chainID);
+            ren.color = new Color(0.4191176f,0.4191176f,0.4191176f);
+            spriteObj.transform.localScale = new Vector3(1.5f, 1.05f, 1);
+            spriteObj.transform.localPosition = Vector3.zero;
+            spriteObj.transform.localRotation = Quaternion.Euler(new Vector3(0,0,90));
+
+            // var shadowObj = new GameObject("shadow");
+            // shadowObj.transform.parent = obj.transform;
+            // shadowObj.transform.localPosition = Vector3.zero;
+            // shadowObj.transform.localRotation = Quaternion.Euler(new Vector3(0,0,90));
+            // var sf = shadowObj.AddComponent<SFPolygon>();
+            // sf.verts = new[]
+            // {
+            //     new Vector2(-0.269364f, 0.43f),
+            //     new Vector2(-0.269364f, -0.44f),
+            //     new Vector2(-0.249364f, -0.45f),
+            //     new Vector2(0.270636f, -0.45f),
+            //     new Vector2(0.270636f, 0.42f),
+            //     new Vector2(0.260636f, 0.43f)
+            // };
+            // sf.looped = true;
+            // sf.shadowLayers = -1;
+
+            var damageEvent = obj.GetComponent<DamagableEvent>();
+            damageEvent.maxHP = 250;
+            damageEvent.currentHP = 250;
+            damageEvent.damageEvent = new UnityEvent();
+            damageEvent.damageEvent.AddListener(() =>
+            {
+                var prevCol = ren.color;
+                ren.color = new Color(0.7f,0.7f,0.7f);
+                StickFightMaps.instance.ExecuteAfterSeconds(0.1f, () =>
+                {
+                    ren.color = prevCol;
+                });
+            });
+
+            spriteObj.AddComponent<BoxCollider2D>();
+
+            Destroy(obj.GetComponent<SpriteMask>());
         }
     }
 }

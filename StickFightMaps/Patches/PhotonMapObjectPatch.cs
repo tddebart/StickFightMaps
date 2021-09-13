@@ -81,7 +81,19 @@ namespace StickFightMaps.Patches
                         //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
                     } else if(__instance.gameObject.name == "SpikeBall")
                     {
-                        var crateReal = PhotonNetwork.Instantiate("SpikeBall", (transform = __instance.transform).position, transform.rotation, 0);
+                        var crateReal = PhotonNetwork.Instantiate("spikeBall", (transform = __instance.transform).position, transform.rotation, 0);
+                        //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
+                    } else if (__instance.gameObject.name.Contains("(Chain2)"))
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("chain", (transform = __instance.transform).position, transform.rotation, 0);
+                        crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupChain", RpcTarget.All, 2);
+                    } else if(__instance.gameObject.name == "PlatformLong")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("platformLong", (transform = __instance.transform).position, transform.rotation, 0);
+                        //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
+                    } else if(__instance.gameObject.name == "ExtraLongPlatform")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("extraLongPlatform", (transform = __instance.transform).position, transform.rotation, 0);
                         //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
                     }
                     else

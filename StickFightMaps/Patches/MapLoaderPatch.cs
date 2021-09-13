@@ -16,20 +16,22 @@ namespace StickFightMaps
             foreach (Transform obj in scene.GetRootGameObjects()[0].GetComponentsInChildren<Transform>())
             {
                 obj.gameObject.layer = 0;
-                if (obj.name == "TestCol")
+                if (obj.name.IndexOf("(Rope)", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
-                    obj.gameObject.AddComponent<TestCol>();
+                    obj.GetComponent<SpriteRenderer>().enabled = false;
+                    obj.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                    StickFightMaps.instance.ExecuteAfterSeconds(0.05f, () =>
+                    {
+                        GameObject.Destroy(obj.GetComponent<SpriteMask>());
+                        GameObject.Destroy(obj.transform.GetChild(0).GetComponent<SpriteMask>());
+                    });
+                    continue;
                 }
                 if (obj.name.IndexOf("EDITOR", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     obj.gameObject.SetActive(false);
                 }
 
-                if (obj.name.Contains("(Rope)"))
-                {
-                    obj.GetComponent<SpriteRenderer>().enabled = false;
-                    obj.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-                }
                 else if (obj.name.IndexOf("NOT COL", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     // check if color was set to white in unity and change it back to white after 0.1 seconds because it changes
@@ -51,7 +53,7 @@ namespace StickFightMaps
 
                 if (obj.name.Contains("(Fall)"))
                 {
-                    StickFightMaps.instance.StartCoroutine(StickFightMaps.setupThings(obj));
+                    StickFightMaps.instance.StartCoroutine(StickFightMaps.setupThingsPlatform(obj));
 
                     // obj.gameObject.AddComponent<FallingPlatform>();
                     // var view = obj.gameObject.AddComponent<PhotonView>();

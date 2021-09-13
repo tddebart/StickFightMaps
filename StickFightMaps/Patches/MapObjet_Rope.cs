@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using Sonigon;
 using UnityEngine;
 
 namespace StickFightMaps.Patches
@@ -12,6 +13,22 @@ namespace StickFightMaps.Patches
             {
                 target.GetComponent<SpringJoint2D>().dampingRatio = 0.25f;
             }
+        }
+    }
+    [HarmonyPatch(typeof(MapObjet_Rope), "OnDisable")]
+    public class MapObjet_RopePatch_Disable
+    {
+        public static bool Postfix(MapObjet_Rope __instance)
+        {
+            return __instance.soundRopePlay;
+        }
+    }
+    [HarmonyPatch(typeof(MapObjet_Rope), "OnDestroy")]
+    public class MapObjet_RopePatch_Destroy
+    {
+        public static bool Postfix(MapObjet_Rope __instance)
+        {
+            return __instance.soundRopePlay;
         }
     }
 }

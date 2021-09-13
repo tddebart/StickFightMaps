@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 518933994
+CRC: 2821183451
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 86687cc21eb174a0890a10cb1cfa532b
+    Hash: bcfc7675be94acc7815bb4d09e912321
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c8dfe0e39a9e598407b2411fdb1c449d
+    Hash: b7edcca39f5a921de73901027c02e5ac
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -52,8 +52,6 @@ ClassTypes:
 - Class: 104
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: c798d010bda18794fbb7ac2a433e63da, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: ec7135702ff4fca4faca1952ef4a3700, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 765dc0812f0aae64cbda4b52ccf6c32d, type: 3}
@@ -76,6 +74,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 398c79e97d8d5684dbe3db29a1c8036e, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: a99bad3a64857c0498d35a569a7ff906, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fac7269a41ee4674f9df375cbe38550f, type: 3}
@@ -83,8 +83,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 65659dfa25631ac458374f81c3c48cf1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1718af4bc5ba3de4881e59bc0d835fc0, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: f6d40d8b72ee8c74293bf621e0097f15, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 - Class: 114
@@ -126,6 +124,7 @@ ClassTypes:
 - Class: 233
   Script: {instanceID: 0}
 Assets:
+- Assets/Scene/Stickfight/4 Castle/Castle10.unity
 - Assets/Scene/Stickfight/2 Desert/Desert6.unity
 - Assets/Scene/Stickfight/4 Castle/Castle5.unity
 - Assets/Scene/Stickfight/4 Castle/Castle1.unity
@@ -133,8 +132,9 @@ Assets:
 - Assets/Scene/Stickfight/1 Woods/Woods2.unity
 - Assets/Scene/Stickfight/1 Woods/Woods4.unity
 - Assets/Scene/Stickfight/4 Castle/Castle8.unity
+- Assets/Scene/Stickfight/4 Castle/Castle9.unity
 - Assets/Scene/Stickfight/1 Woods/Woods3.unity
-- Assets/Scene/Stickfight/4 Castle/PhysT.unity
+- Assets/Scene/Stickfight/4 Castle/Castle11.unity
 - Assets/Scene/Stickfight/4 Castle/Castle7.unity
 - Assets/Scene/Stickfight/4 Castle/Castle3.unity
 - Assets/Scene/Stickfight/1 Woods/Woods1.unity
