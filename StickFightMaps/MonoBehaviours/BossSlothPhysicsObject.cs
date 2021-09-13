@@ -24,7 +24,7 @@ namespace StickFightMaps.MonoBehaviours
                 GetComponent<NetworkPhysicsObject>()
             };
             var networkObject = gameObject.GetComponent<NetworkPhysicsObject>();
-            networkObject.soundBoxImpact = ScriptableObject.CreateInstance<SoundEvent>();
+            networkObject.soundBoxImpact = Resources.Load<GameObject>("4 map objects/Box").GetComponent<NetworkPhysicsObject>().soundBoxImpact;
         }
         
         [PunRPC]

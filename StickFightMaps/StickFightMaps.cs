@@ -149,7 +149,6 @@ namespace StickFightMaps
             //
             // #endregion
 
-            
             #region Create trapDoor left
             
             var trapDoorL = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
@@ -201,38 +200,38 @@ namespace StickFightMaps
             
             #endregion
             
-            #region Create circle
-
-            var circle = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
-            DontDestroyOnLoad(circle);
-            Destroy(circle.GetComponent<BoxCollider2D>());
-            Destroy(circle.GetComponent<SFPolygon>());
-            Destroy(circle.GetComponent<NetworkPhysicsObject>());
-            circle.tag = "NoMask";
-            
-            circle.transform.Translate(new Vector3(0,200,1000));
-            
-            Destroy(circle.transform.GetChild(0).gameObject);
-            Destroy(circle.transform.GetChild(1).gameObject);
-
-            //circle.GetComponent<SpriteRenderer>().sprite = levelObjects.LoadAsset<Sprite>("Beard_01");
-            circle.gameObject.AddComponent<CircleCollider2D>();
-
-            var joint = circle.gameObject.AddComponent<SpringJoint2D>();
-            joint.anchor = new Vector2(0.5f, 0);
-            joint.autoConfigureConnectedAnchor = true;
-            joint.enableCollision = true;
-            joint.dampingRatio = 0.25f;
-            joint.frequency = 2;
-
-            var transformSync = circle.gameObject.AddComponent<PhotonTransformView>();
-            circle.GetComponent<PhotonView>().ObservedComponents.Add(transformSync);
-            transformSync.m_SynchronizePosition = true;
-            transformSync.m_SynchronizeRotation = true;
-
-            PhotonNetwork.PrefabPool.RegisterPrefab("circle", circle);
-            
-            #endregion
+            // #region Create circle
+            //
+            // var circle = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
+            // DontDestroyOnLoad(circle);
+            // Destroy(circle.GetComponent<BoxCollider2D>());
+            // Destroy(circle.GetComponent<SFPolygon>());
+            // Destroy(circle.GetComponent<NetworkPhysicsObject>());
+            // circle.tag = "NoMask";
+            //
+            // circle.transform.Translate(new Vector3(0,200,1000));
+            //
+            // Destroy(circle.transform.GetChild(0).gameObject);
+            // Destroy(circle.transform.GetChild(1).gameObject);
+            //
+            // //circle.GetComponent<SpriteRenderer>().sprite = levelObjects.LoadAsset<Sprite>("Beard_01");
+            // circle.gameObject.AddComponent<CircleCollider2D>();
+            //
+            // var joint = circle.gameObject.AddComponent<SpringJoint2D>();
+            // joint.anchor = new Vector2(0.5f, 0);
+            // joint.autoConfigureConnectedAnchor = true;
+            // joint.enableCollision = true;
+            // joint.dampingRatio = 0.25f;
+            // joint.frequency = 2;
+            //
+            // var transformSync = circle.gameObject.AddComponent<PhotonTransformView>();
+            // circle.GetComponent<PhotonView>().ObservedComponents.Add(transformSync);
+            // transformSync.m_SynchronizePosition = true;
+            // transformSync.m_SynchronizeRotation = true;
+            //
+            // PhotonNetwork.PrefabPool.RegisterPrefab("circle", circle);
+            //
+            // #endregion
             
             #region Create SpikeBall
 
@@ -258,7 +257,7 @@ namespace StickFightMaps
             chain.transform.localScale = new Vector3(3.3f, 2.3f, 2);
             Destroy(chain.GetComponent<SFPolygon>());
             //Destroy(chain.GetComponent<DestructibleBoxDestruction>());
-            chain.name = "TrapDoorR(Trap)";
+            chain.name = "Chain";
 
             PhotonNetwork.PrefabPool.RegisterPrefab("chain", chain);
             
@@ -289,6 +288,112 @@ namespace StickFightMaps
             }
 
             PhotonNetwork.PrefabPool.RegisterPrefab("extraLongPlatform", extraLongPlat);
+            
+            #endregion
+            
+            #region Castle12
+
+            #region Create Castle12Platform1
+
+            var castle12Platform1 = levelObjects.LoadAsset<GameObject>("Castle12Platform1");
+
+            castle12Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle12Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle12Platform1", castle12Platform1);
+            
+            #endregion
+            
+            #region Create Castle12Platform2
+
+            var castle12Platform2 = levelObjects.LoadAsset<GameObject>("Castle12Platform2");
+
+            castle12Platform2.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle12Platform2.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle12Platform2", castle12Platform2);
+            
+            #endregion
+            
+            #region Create Castle12Platform3
+
+            var castle12Platform3 = levelObjects.LoadAsset<GameObject>("Castle12Platform3");
+
+            castle12Platform3.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle12Platform3.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle12Platform3", castle12Platform3);
+            
+            #endregion
+            
+            #endregion
+            
+            #region Castle13
+            
+            #region Create Castle13Platform1
+
+            var castle13Platform1 = levelObjects.LoadAsset<GameObject>("Castle13Platform1");
+
+            castle13Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle13Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform1", castle13Platform1);
+            
+            #endregion
+            
+            #region Create Castle13Platform2
+
+            var castle13Platform2 = levelObjects.LoadAsset<GameObject>("Castle13Platform2");
+
+            castle13Platform2.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle13Platform2.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform2", castle13Platform2);
+            
+            #endregion
+            
+            #region Create Castle13Platform3
+
+            var castle13Platform3 = levelObjects.LoadAsset<GameObject>("Castle13Platform3");
+
+            castle13Platform3.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle13Platform3.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform3", castle13Platform3);
+            
+            #endregion
+            
+            #region Create Castle13Platform4
+
+            var castle13Platform4 = levelObjects.LoadAsset<GameObject>("Castle13Platform4");
+
+            castle13Platform4.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle13Platform4.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform4", castle13Platform4);
+            
+            #endregion
             
             #endregion
 

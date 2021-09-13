@@ -25,6 +25,8 @@ namespace StickFightMaps
                         GameObject.Destroy(obj.GetComponent<SpriteMask>());
                         GameObject.Destroy(obj.transform.GetChild(0).GetComponent<SpriteMask>());
                     });
+                    obj.GetComponent<MapObjet_Rope>().soundRopeLoop = Resources.Load<GameObject>("4 map objects/Box")
+                        .GetComponent<NetworkPhysicsObject>().soundBoxImpact;
                     continue;
                 }
                 if (obj.name.IndexOf("EDITOR", StringComparison.CurrentCultureIgnoreCase) >= 0)

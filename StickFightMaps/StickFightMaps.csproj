@@ -125,7 +125,6 @@
         <Compile Include="MonoBehaviours\Spin.cs" />
         <Compile Include="MonoBehaviours\SpinPart.cs" />
         <Compile Include="Patches\CharacterCreatorItemEquipper.cs" />
-        <Compile Include="Patches\DamageBox.cs" />
         <Compile Include="Patches\GameCrownHandler.cs" />
         <Compile Include="Patches\HealthBar.cs" />
         <Compile Include="Patches\LegRayCasters.cs" />

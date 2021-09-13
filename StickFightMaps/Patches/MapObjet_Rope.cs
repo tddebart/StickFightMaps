@@ -15,20 +15,20 @@ namespace StickFightMaps.Patches
             }
         }
     }
-    [HarmonyPatch(typeof(MapObjet_Rope), "OnDisable")]
-    public class MapObjet_RopePatch_Disable
-    {
-        public static bool Postfix(MapObjet_Rope __instance)
-        {
-            return __instance.soundRopePlay;
-        }
-    }
-    [HarmonyPatch(typeof(MapObjet_Rope), "OnDestroy")]
-    public class MapObjet_RopePatch_Destroy
-    {
-        public static bool Postfix(MapObjet_Rope __instance)
-        {
-            return __instance.soundRopePlay;
-        }
-    }
+    // [HarmonyPatch(typeof(MapObjet_Rope), "OnDisable")]
+    // public class MapObjet_RopePatch_Disable
+    // {
+    //     public static bool Postfix(MapObjet_Rope __instance)
+    //     {
+    //         return __instance.soundRopePlay;
+    //     }
+    // }
+    // [HarmonyPatch(typeof(MapObjet_Rope), "OnDestroy")]
+    // public class MapObjet_RopePatch_Destroy
+    // {
+    //     public static bool Postfix(MapObjet_Rope __instance)
+    //     {
+    //         return __instance.soundRopePlay;
+    //     }
+    // }
 }

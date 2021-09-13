@@ -75,10 +75,6 @@ namespace StickFightMaps.Patches
                     {
                         var crateReal = PhotonNetwork.Instantiate("trapDoorR", (transform = __instance.transform).position, transform.rotation, 0);
                         crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
-                    } else if(__instance.gameObject.name.Contains("(Circle)"))
-                    {
-                        var crateReal = PhotonNetwork.Instantiate("circle", (transform = __instance.transform).position, transform.rotation, 0);
-                        //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
                     } else if(__instance.gameObject.name == "SpikeBall")
                     {
                         var crateReal = PhotonNetwork.Instantiate("spikeBall", (transform = __instance.transform).position, transform.rotation, 0);
@@ -96,6 +92,36 @@ namespace StickFightMaps.Patches
                         var crateReal = PhotonNetwork.Instantiate("extraLongPlatform", (transform = __instance.transform).position, transform.rotation, 0);
                         //crateReal.GetComponent<PhotonView>().RPC("RPCA_SetupHinge", RpcTarget.All, true);
                     }
+
+                    #region Castle12
+                    else if(__instance.gameObject.name == "Castle12Platform1")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle12Platform1", (transform = __instance.transform).position, transform.rotation, 0);
+                    } else if(__instance.gameObject.name == "Castle12Platform2")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle12Platform2", (transform = __instance.transform).position, transform.rotation, 0);
+                    } else if(__instance.gameObject.name == "Castle12Platform3")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle12Platform3", (transform = __instance.transform).position, transform.rotation, 0);
+                    }
+                    #endregion
+                    
+                    #region Castle13
+                    else if(__instance.gameObject.name == "Castle13Platform1")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle13Platform1", (transform = __instance.transform).position, transform.rotation, 0);
+                    } else if(__instance.gameObject.name == "Castle13Platform2")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle13Platform2", (transform = __instance.transform).position, transform.rotation, 0);
+                    } else if(__instance.gameObject.name == "Castle13Platform3")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle13Platform3", (transform = __instance.transform).position, transform.rotation, 0);
+                    } else if(__instance.gameObject.name == "Castle13Platform4")
+                    {
+                        var crateReal = PhotonNetwork.Instantiate("castle13Platform4", (transform = __instance.transform).position, transform.rotation, 0);
+                    }
+                    #endregion
+                    
                     else
                     {
                         var box = PhotonNetwork.Instantiate("4 Map Objects/" + __instance.gameObject.name.Split(new char[]

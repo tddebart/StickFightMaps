@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1488657086
+CRC: 2930810550
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5d054c98e956c89b3fafe6bd339756e2
+    Hash: c428d4621ad86baeec6d61b05e4a7f9f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2eea88415063c640db19c72b59a568cd
@@ -93,6 +93,7 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Texture2D/Castle_Chain1.png
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform3.prefab
 - Assets/default.mat
 - Assets/Material/crateDesert.mat
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateReal.prefab
@@ -101,15 +102,21 @@ Assets:
 - Assets/Texture2D/Castle_Platform1.png
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle_Platform3(Fall).prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/PlatformLong.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform1.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/ExtraLongPlatform.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/SpikeBall.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/A_Explosion_Timed_Detonation.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform2.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateRealBig.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLongStripe.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLong.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateLongReal.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform4.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/ExplosionBig.prefab
 - Assets/Texture2D/Crate1.png
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/BombReal.prefab
 - Assets/Texture2D/Castle_Chain2.png
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform2.prefab
 Dependencies: []
