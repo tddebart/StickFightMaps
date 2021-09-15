@@ -16,7 +16,6 @@ namespace StickFightMaps.Patches
                 //UnityEngine.Debug.LogWarning(hit.transform.name + " | " + hit.transform.parent.name);
                 if (hit.transform.parent && hit.transform.parent.name.Contains("(Fall)") && hit.transform.parent.GetComponent<FallingPlatform>())
                 {
-                    UnityEngine.Debug.LogWarning("Standing on fall");
                     hit.transform.gameObject.GetComponentInParent<PhotonView>().RPC("RPCA_Fall", RpcTarget.All);
                 }
             }

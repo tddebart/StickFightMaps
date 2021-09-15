@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3821082568
+CRC: 1666304910
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0386f3c45872e47541d00857f8b80657
+    Hash: 6078d3778b0569000c5cc92d7759f967
   TypeTreeHash:
     serializedVersion: 2
     Hash: b7edcca39f5a921de73901027c02e5ac
@@ -135,10 +135,14 @@ Assets:
 - Assets/Scene/Stickfight/4 Castle/Castle8.unity
 - Assets/Scene/Stickfight/4 Castle/Castle9.unity
 - Assets/Scene/Stickfight/4 Castle/Castle13.unity
+- Assets/Scene/Stickfight/4 Castle/Castle17.unity
+- Assets/Scene/Stickfight/4 Castle/Castle14.unity
 - Assets/Scene/Stickfight/1 Woods/Woods3.unity
+- Assets/Scene/Stickfight/4 Castle/Castle16.unity
 - Assets/Scene/Stickfight/4 Castle/Castle11.unity
 - Assets/Scene/Stickfight/4 Castle/Castle7.unity
 - Assets/Scene/Stickfight/4 Castle/Castle3.unity
+- Assets/Scene/Stickfight/4 Castle/Castle15.unity
 - Assets/Scene/Stickfight/1 Woods/Woods1.unity
 - Assets/Scene/Stickfight/2 Desert/Desert4.unity
 - Assets/Scene/Stickfight/4 Castle/Castle4.unity

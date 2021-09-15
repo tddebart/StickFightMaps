@@ -392,10 +392,165 @@ namespace StickFightMaps
             }
 
             PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform4", castle13Platform4);
+
+            #endregion
+            
             
             #endregion
             
+            #region Create ScaryBall
+
+            var scaryBall = levelObjects.LoadAsset<GameObject>("ScaryBall");
+
+            scaryBall.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in scaryBall.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("scaryBall", scaryBall);
+
             #endregion
+
+            #region Castle15
+
+            #region Create Castle15Platform1
+
+            var castle15Platform1 = levelObjects.LoadAsset<GameObject>("Castle15Platform1");
+
+            castle15Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle15Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle15Platform1", castle15Platform1);
+            
+            #endregion
+            
+            #region Create Castle15Platform2
+
+            var castle15Platform2 = levelObjects.LoadAsset<GameObject>("Castle15Platform2");
+
+            castle15Platform2.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle15Platform2.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle15Platform2", castle15Platform2);
+            
+            #endregion
+
+            #region Create Castle15Platform3
+
+            var castle15Platform3 = levelObjects.LoadAsset<GameObject>("Castle15Platform3");
+
+            castle15Platform3.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle15Platform3.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle15Platform3", castle15Platform3);
+            
+            #endregion
+
+            #endregion
+
+            #region Castle16
+
+            #region Create Castle16Platform1
+
+            var castle16Platform1 = levelObjects.LoadAsset<GameObject>("Castle16Platform1");
+
+            castle16Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle16Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle16Platform1", castle16Platform1);
+            
+            #endregion
+            
+            #region Create Castle16Platform2
+
+            var castle16Platform2 = levelObjects.LoadAsset<GameObject>("Castle16Platform2");
+
+            castle16Platform2.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle16Platform2.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle16Platform2", castle16Platform2);
+            
+            #endregion
+
+            #endregion
+            
+            #region Castle17
+
+            #region Create Castle17Platform1
+
+            var castle17Platform1 = levelObjects.LoadAsset<GameObject>("Castle17Platform1");
+
+            castle17Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle17Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform1", castle17Platform1);
+            
+            #endregion
+            
+            #region Create Castle17Platform2
+
+            var castle17Platform2 = levelObjects.LoadAsset<GameObject>("Castle17Platform2");
+
+            castle17Platform2.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle17Platform2.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform2", castle17Platform2);
+            
+            #endregion
+
+            #region Create Castle17Platform3
+
+            var castle17Platform3 = levelObjects.LoadAsset<GameObject>("Castle17Platform3");
+
+            castle17Platform3.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle17Platform3.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform3", castle17Platform3);
+            
+            #endregion
+            
+            #region Create Castle17Platform4
+
+            var castle17Platform4 = levelObjects.LoadAsset<GameObject>("Castle17Platform4");
+
+            castle17Platform4.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in castle17Platform4.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform4", castle17Platform4);
+            
+            #endregion
+
+            #endregion
+            
+            //TODO: spikes on physics objects not properly working
 
             LevelManager.RegisterMaps(levelAsset, "StickFight");
         }

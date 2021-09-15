@@ -130,11 +130,12 @@ namespace StickFightMaps.MonoBehaviours
 
             var damageEvent = obj.GetComponent<DamagableEvent>();
             damageEvent.maxHP = 250;
+            //TODO change this back to 250
             damageEvent.currentHP = 250;
             damageEvent.damageEvent = new UnityEvent();
             damageEvent.damageEvent.AddListener(() =>
             {
-                var prevCol = ren.color;
+                var prevCol = new Color(0.4191176f, 0.4191176f, 0.4191176f);
                 ren.color = new Color(0.7f,0.7f,0.7f);
                 StickFightMaps.instance.ExecuteAfterSeconds(0.1f, () =>
                 {

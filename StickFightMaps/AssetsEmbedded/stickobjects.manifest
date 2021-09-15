@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2930810550
+CRC: 496743842
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c428d4621ad86baeec6d61b05e4a7f9f
+    Hash: 53347d9fa533caca0accd72b6c543330
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2eea88415063c640db19c72b59a568cd
+    Hash: 6fc01f32b345f83dbb27e6aff548332a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -52,8 +52,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 788917b36ff46094a94d23338a22f58a, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 59f6e554977e2b2499208a5d0e889bc4, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: bbb7b9541a112aa4a8adaa80a5bd4867, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: c7d079d4457716f4eb39ba3ba5545f9c, type: 3}
@@ -94,27 +92,35 @@ ClassTypes:
 Assets:
 - Assets/Texture2D/Castle_Chain1.png
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform3.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle16/Castle16Platform2.prefab
 - Assets/default.mat
 - Assets/Material/crateDesert.mat
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateReal.prefab
-- Assets/Texture2D/Beard_01.png
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle15/Castle15Platform2.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeSpinPart.prefab
 - Assets/Texture2D/Castle_Platform1.png
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle17/Castle17Platform2.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle_Platform3(Fall).prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/PlatformLong.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/ExtraLongPlatform.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle17/Castle17Platform3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/SpikeBall.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/A_Explosion_Timed_Detonation.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform2.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle15/Castle15Platform1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateRealBig.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle14/ScaryBall.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle17/Castle17Platform4.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLongStripe.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeLong.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateLongReal.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle15/Castle15Platform3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform4.prefab
-- Assets/Scene/Stickfight/0 Prefabs/3 Factory/ExplosionBig.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle17/Castle17Platform1.prefab
+- Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle16/Castle16Platform1.prefab
 - Assets/Texture2D/Crate1.png
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/BombReal.prefab
 - Assets/Texture2D/Castle_Chain2.png
