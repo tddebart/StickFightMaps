@@ -30,7 +30,7 @@ namespace StickFightMaps.MonoBehaviours
 					{
 						var d = 1f;
 						d = startCurve.Evaluate(1);
-						transform.Rotate(spinVector * num * d, Space.Self);
+						transform.Rotate(spinVector * Time.deltaTime * d, Space.Self);
 						hasWaited = true;
 					});
 				}
@@ -39,7 +39,7 @@ namespace StickFightMaps.MonoBehaviours
 					
 					var d = 1f;
 					d = startCurve.Evaluate(1 + num / secondsToStart);
-					transform.Rotate(spinVector * num * d, Space.Self);
+					transform.Rotate(spinVector * (num * d), Space.Self);
 				}
 			}
 

@@ -15,7 +15,7 @@ namespace StickFightMaps
         {
             foreach (Transform obj in scene.GetRootGameObjects()[0].GetComponentsInChildren<Transform>())
             {
-                obj.gameObject.layer = 0;
+                //obj.gameObject.layer = 0;
                 if (obj.name.IndexOf("(Rope)", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     obj.GetComponent<SpriteRenderer>().enabled = false;
@@ -29,6 +29,33 @@ namespace StickFightMaps
                         .GetComponent<NetworkPhysicsObject>().soundBoxImpact;
                     continue;
                 }
+
+                if (obj.name.IndexOf("TreadMill", StringComparison.CurrentCultureIgnoreCase) >= 0)
+                {
+                    obj.GetChild(0).gameObject.AddComponent<TreadMill>();
+                }
+                
+                if (obj.name.IndexOf("BoxSpawner", StringComparison.CurrentCultureIgnoreCase) >= 0)
+                {
+                    obj.gameObject.AddComponent<BoxSpawner>();
+                }
+                
+                if (obj.name.IndexOf("PushSpawner", StringComparison.CurrentCultureIgnoreCase) >= 0)
+                {
+                    var spawner = obj.gameObject.AddComponent<Spawner>();
+                    spawner.prefabName = "Pusher";
+                    spawner.cooldown = 1.75f;
+                    spawner.AdRandomCooldown = 2f;
+                }
+                
+                if (obj.name.IndexOf("(SpinMill)", StringComparison.CurrentCultureIgnoreCase) >= 0)
+                {
+                    var spin = obj.gameObject.AddComponent<Spin>();
+                    spin.spinVector = new Vector3(0, 0, 300);
+                    spin.startCurve = AnimationCurve.Constant(0,1,1);
+                    spin.secondsToStart = 0.1f;
+                }
+                
                 if (obj.name.IndexOf("EDITOR", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     obj.gameObject.SetActive(false);

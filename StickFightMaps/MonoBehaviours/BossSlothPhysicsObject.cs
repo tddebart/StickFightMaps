@@ -89,6 +89,16 @@ namespace StickFightMaps.MonoBehaviours
         }
 
         [PunRPC]
+        public void RPCA_SetupCustomBox()
+        {
+            var rig = GetComponent<Rigidbody2D>();
+            rig.simulated = true;
+            rig.isKinematic = false;
+            if (name.Contains("custom"))
+                gameObject.AddComponent<RemoveAfterSeconds>().seconds = 25f;
+        }
+        
+        [PunRPC]
         public void RPCA_SetupChain(int chainID)
         {
             var obj = gameObject;
@@ -130,7 +140,6 @@ namespace StickFightMaps.MonoBehaviours
 
             var damageEvent = obj.GetComponent<DamagableEvent>();
             damageEvent.maxHP = 250;
-            //TODO change this back to 250
             damageEvent.currentHP = 250;
             damageEvent.damageEvent = new UnityEvent();
             damageEvent.damageEvent.AddListener(() =>

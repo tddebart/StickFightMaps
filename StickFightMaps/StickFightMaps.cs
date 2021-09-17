@@ -52,6 +52,16 @@ namespace StickFightMaps
 
             #endregion
 
+            var customBox = Instantiate(Resources.Load<GameObject>("4 map objects/Box"));
+            DontDestroyOnLoad(customBox);
+
+            customBox.AddComponent<BossSlothPhysicsObject>();
+            customBox.transform.Translate(1000,1000,0);
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("customBox", customBox);
+            
+            #region DESERT
+
             #region Create CrateReal
             // Create CrateReal
             var crate = levelObjects.LoadAsset<GameObject>("CrateReal");
@@ -148,7 +158,11 @@ namespace StickFightMaps
             // PhotonNetwork.PrefabPool.RegisterPrefab("Bomb", bomb);
             //
             // #endregion
+            
+            #endregion
 
+            #region CASTLE
+            
             #region Create trapDoor left
             
             var trapDoorL = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
@@ -156,6 +170,7 @@ namespace StickFightMaps
             DontDestroyOnLoad(trapDoorL);
             trapDoorL.transform.Translate(new Vector3(1000,0,0));
             trapDoorL.name = "TrapDoorL(Trap)";
+            trapDoorL.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
             //var hinge = trapDoorL.AddComponent<CreateHinge>();
             //hinge.right = false;
             //hinge.runAwake = false;
@@ -175,6 +190,7 @@ namespace StickFightMaps
             DontDestroyOnLoad(trapDoorR);
             trapDoorR.transform.Translate(new Vector3(1000,0,0));
             trapDoorR.name = "TrapDoorR(Trap)";
+            trapDoorR.GetComponent<SpriteRenderer>().sortingLayerName = "Front";
             // var hinge2 = trapDoorR.AddComponent<CreateHinge>();
             // hinge2.right = true;
             // hinge2.runAwake = false;
@@ -200,38 +216,6 @@ namespace StickFightMaps
             
             #endregion
             
-            // #region Create circle
-            //
-            // var circle = Instantiate(Resources.Load<GameObject>("4 Map Objects/Box"));
-            // DontDestroyOnLoad(circle);
-            // Destroy(circle.GetComponent<BoxCollider2D>());
-            // Destroy(circle.GetComponent<SFPolygon>());
-            // Destroy(circle.GetComponent<NetworkPhysicsObject>());
-            // circle.tag = "NoMask";
-            //
-            // circle.transform.Translate(new Vector3(0,200,1000));
-            //
-            // Destroy(circle.transform.GetChild(0).gameObject);
-            // Destroy(circle.transform.GetChild(1).gameObject);
-            //
-            // //circle.GetComponent<SpriteRenderer>().sprite = levelObjects.LoadAsset<Sprite>("Beard_01");
-            // circle.gameObject.AddComponent<CircleCollider2D>();
-            //
-            // var joint = circle.gameObject.AddComponent<SpringJoint2D>();
-            // joint.anchor = new Vector2(0.5f, 0);
-            // joint.autoConfigureConnectedAnchor = true;
-            // joint.enableCollision = true;
-            // joint.dampingRatio = 0.25f;
-            // joint.frequency = 2;
-            //
-            // var transformSync = circle.gameObject.AddComponent<PhotonTransformView>();
-            // circle.GetComponent<PhotonView>().ObservedComponents.Add(transformSync);
-            // transformSync.m_SynchronizePosition = true;
-            // transformSync.m_SynchronizeRotation = true;
-            //
-            // PhotonNetwork.PrefabPool.RegisterPrefab("circle", circle);
-            //
-            // #endregion
             
             #region Create SpikeBall
 
@@ -290,7 +274,7 @@ namespace StickFightMaps
             PhotonNetwork.PrefabPool.RegisterPrefab("extraLongPlatform", extraLongPlat);
             
             #endregion
-            
+
             #region Castle12
 
             #region Create Castle12Platform1
@@ -551,6 +535,86 @@ namespace StickFightMaps
             #endregion
             
             //TODO: spikes on physics objects not properly working
+            #endregion
+
+            #region Factory
+
+            #region Factory1
+
+            #region Create factory1Platform1
+
+            var factory1Platform1 = levelObjects.LoadAsset<GameObject>("Factory1Platform1");
+
+            factory1Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in factory1Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+
+            var phys = factory1Platform1.AddComponent<PhysSpin>();
+            phys.spinAmount = 300000;
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("factory1Platform1", factory1Platform1);
+            
+            #endregion
+
+            #endregion
+            
+            #region Factory2
+
+            #region Create factory2Platform1
+
+            var factory2Platform1 = levelObjects.LoadAsset<GameObject>("Factory2Platform1");
+
+            factory2Platform1.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in factory2Platform1.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+            var phys1 = factory2Platform1.AddComponent<PhysSpin>();
+            phys1.spinAmount = 1000000;
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("factory2Platform1", factory2Platform1);
+            
+            #endregion
+            
+            #region Create factory2Platform2
+
+            var factory2Platform2 = levelObjects.LoadAsset<GameObject>("Factory2Platform2");
+
+            factory2Platform2.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in factory2Platform2.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+            var phys2 = factory2Platform2.AddComponent<PhysSpin>();
+            phys2.spinAmount = 1000000;
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("factory2Platform2", factory2Platform2);
+            
+            #endregion
+
+            #endregion
+
+            #region Factory13
+
+            var pusher = levelObjects.LoadAsset<GameObject>("(Pusher)");
+
+            pusher.AddComponent<BossSlothPhysicsObject>().DoThings();
+            foreach (var trns in pusher.GetComponentsInChildren<Transform>())
+            {
+                trns.gameObject.layer = 17;
+            }
+            
+            pusher.AddComponent<Force>().force = -17000000;
+            pusher.AddComponent<RemoveAfterSeconds>().seconds = 4f;
+
+            PhotonNetwork.PrefabPool.RegisterPrefab("Pusher", pusher);
+
+            #endregion
+
+            #endregion
+            
 
             LevelManager.RegisterMaps(levelAsset, "StickFight");
         }

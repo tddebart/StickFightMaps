@@ -115,15 +115,21 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Extensions\PlayerVelocityExtension.cs" />
         <Compile Include="MonoBehaviours\Bomb.cs" />
         <Compile Include="MonoBehaviours\BossSlothPhysicsObject.cs" />
+        <Compile Include="MonoBehaviours\BoxSpawner.cs" />
         <Compile Include="MonoBehaviours\Crate.cs" />
         <Compile Include="MonoBehaviours\CreateHinge.cs" />
         <Compile Include="MonoBehaviours\FallingCollision.cs" />
         <Compile Include="MonoBehaviours\FallingPlatform.cs" />
+        <Compile Include="MonoBehaviours\Force.cs" />
+        <Compile Include="MonoBehaviours\PhysSpin.cs" />
+        <Compile Include="MonoBehaviours\Spawner.cs" />
         <Compile Include="MonoBehaviours\SpawnObjectAfterDelay.cs" />
         <Compile Include="MonoBehaviours\Spin.cs" />
         <Compile Include="MonoBehaviours\SpinPart.cs" />
+        <Compile Include="MonoBehaviours\TreadMill.cs" />
         <Compile Include="Patches\CharacterCreatorItemEquipper.cs" />
         <Compile Include="Patches\DamageBox.cs" />
         <Compile Include="Patches\GameCrownHandler.cs" />

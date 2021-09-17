@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1666304910
+CRC: 1796332070
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6078d3778b0569000c5cc92d7759f967
+    Hash: d289d89aa70408cc29ed8aa3a0ba249d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b7edcca39f5a921de73901027c02e5ac
+    Hash: e3797dc5c9e385c20f71395360842bfb
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,6 +26,8 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 50
+  Script: {instanceID: 0}
+- Class: 54
   Script: {instanceID: 0}
 - Class: 58
   Script: {instanceID: 0}
@@ -68,6 +70,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: ec206d466165a3a45a4f3e6baabc0a91, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 5d2d67272adddff4390aff8657786474, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fc02aae8cb0d19842b7f21023fbfcae5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d5be6e094ca142d479096cf0366af4f9, type: 3}
@@ -92,6 +96,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 4e066b6d123ae7d40bc0464ecb0ae0d3, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: e918399d0cae736468b203ddc571733d, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: b1edcfed3d4e66443871a73f3ccbf70a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3ba096de1899e6e41b48689b82235406, type: 3}
@@ -99,6 +105,10 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 58efa4ee2c0b9614dadf6e5ab345d2f9, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 350597bf7c4b06444a1dc23fbca36644, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8efbadbfc44471f4b8ae7728cbf4ceb1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 75a19329e367ea64b986585abd4daeff, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 120
@@ -125,6 +135,7 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Scene/Stickfight/4 Castle/Castle12.unity
+- Assets/Scene/Stickfight/3 Factory/Factory8.unity
 - Assets/Scene/Stickfight/4 Castle/Castle10.unity
 - Assets/Scene/Stickfight/2 Desert/Desert6.unity
 - Assets/Scene/Stickfight/4 Castle/Castle5.unity
@@ -141,6 +152,7 @@ Assets:
 - Assets/Scene/Stickfight/4 Castle/Castle16.unity
 - Assets/Scene/Stickfight/4 Castle/Castle11.unity
 - Assets/Scene/Stickfight/4 Castle/Castle7.unity
+- Assets/Scene/Stickfight/3 Factory/Factory12.unity
 - Assets/Scene/Stickfight/4 Castle/Castle3.unity
 - Assets/Scene/Stickfight/4 Castle/Castle15.unity
 - Assets/Scene/Stickfight/1 Woods/Woods1.unity
@@ -149,6 +161,7 @@ Assets:
 - Assets/Scene/Stickfight/2 Desert/Desert9.unity
 - Assets/Scene/Stickfight/4 Castle/Castle2.unity
 - Assets/Scene/Stickfight/2 Desert/Desert5.unity
+- Assets/Scene/Stickfight/3 Factory/Factory13.unity
 - Assets/Scene/Stickfight/4 Castle/Castle5b.unity
 - Assets/Scene/Stickfight/2 Desert/Desert3.unity
 - Assets/Scene/Stickfight/2 Desert/Desert10.unity

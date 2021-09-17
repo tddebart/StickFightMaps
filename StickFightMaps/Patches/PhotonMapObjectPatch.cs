@@ -66,6 +66,9 @@ namespace StickFightMaps.Patches
                         crateReal.GetComponent<PhotonView>().RPC("doScaling", RpcTarget.All, __instance.transform.lossyScale);
                         //crateReal.GetComponent<PhotonView>().RPC("getSound", RpcTarget.All);
                     } 
+                    
+                    #region CASTLE
+                    
                     else if(__instance.gameObject.name.Contains("(hingeL)"))
                     {
                         var crateReal = PhotonNetwork.Instantiate("trapDoorL", (transform = __instance.transform).position, transform.rotation, 0);
@@ -175,6 +178,39 @@ namespace StickFightMaps.Patches
                         PhotonNetwork.Instantiate("castle17Platform4", (transform = __instance.transform).position, transform.rotation, 0);
                     }
 
+                    #endregion
+                    
+                    #endregion
+                    
+                    #region Factory
+                    
+                    #region Factory1
+                    
+                    else if(__instance.gameObject.name == "Factory1Platform1")
+                    {
+                        PhotonNetwork.Instantiate("factory1Platform1", (transform = __instance.transform).position, transform.rotation, 0);
+                    }
+                    
+                    #endregion
+                    
+                    #region Factory2
+                    
+                    else if(__instance.gameObject.name == "Factory2Platform1")
+                    {
+                        PhotonNetwork.Instantiate("factory2Platform1", (transform = __instance.transform).position, transform.rotation, 0);
+                    }
+                    else if(__instance.gameObject.name == "Factory2Platform2")
+                    {
+                        PhotonNetwork.Instantiate("factory2Platform2", (transform = __instance.transform).position, transform.rotation, 0);
+                    }
+                    
+                    #endregion
+                    
+                    else if(__instance.gameObject.name == "(Pusher)")
+                    {
+                        PhotonNetwork.Instantiate("Pusher", (transform = __instance.transform).position, transform.rotation, 0);
+                    }
+                    
                     #endregion
                     
                     else
