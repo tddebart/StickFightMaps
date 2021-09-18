@@ -7,19 +7,23 @@ namespace StickFightMaps.MonoBehaviours
     
     public class FallingCollision : MonoBehaviour
     {
-        public bool done;
 
         public TimeSince timeSinceStart = 0;
-        public float timeNeededAlive;
+        public float timeNeededAlive = 0.5f;
+
+        private FallingPlatform plat;
+
+        private void Start()
+        {
+            plat = GetComponentInParent<FallingPlatform>();
+        }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (done || timeSinceStart > timeNeededAlive)
+            if (plat.done)
             {
                 return;
             }
-
-            done = true;
             if (PhotonNetwork.IsMasterClient)
             {
                 GetComponentInParent<PhotonView>().RPC("RPCA_Fall", RpcTarget.All);

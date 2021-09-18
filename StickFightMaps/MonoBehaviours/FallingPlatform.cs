@@ -7,7 +7,7 @@ namespace StickFightMaps.MonoBehaviours
 {
     public class FallingPlatform : MonoBehaviour
     {
-        private bool done;
+        public bool done;
         private static readonly int FallAni = Animator.StringToHash("Fall");
         private Animator animation;
         private Rigidbody2D rig;
@@ -29,7 +29,7 @@ namespace StickFightMaps.MonoBehaviours
             transform.parent = MapManager.instance.currentMap.Map.transform;
             transform.localScale = scale;
             transform.position = position;
-            GetComponentInChildren<FallingCollision>().enabled = !collideAnything;
+            //GetComponentInChildren<FallingCollision>().enabled = !collideAnything;
         }
 
 
@@ -52,10 +52,10 @@ namespace StickFightMaps.MonoBehaviours
                 }
 
                 animation.enabled = false;
-                
-                rig.bodyType = RigidbodyType2D.Dynamic;
+
+                rig.constraints = RigidbodyConstraints2D.None;
                 rig.AddTorque(Random.Range(-2.5f, 2.5f), ForceMode2D.Impulse);
-                rig.AddForce(Vector2.up * Random.Range(2f, 3f), ForceMode2D.Impulse);
+                rig.AddForce(Vector2.up * Random.Range(1f, 2f), ForceMode2D.Impulse);
 
             });
             var rem = gameObject.AddComponent<RemoveAfterSeconds>();
