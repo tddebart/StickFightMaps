@@ -48,6 +48,15 @@ namespace StickFightMaps
                     spawner.AdRandomCooldown = 2f;
                 }
                 
+                if (obj.name.IndexOf("MovingWall", StringComparison.CurrentCultureIgnoreCase) >= 0)
+                {
+                    obj.GetComponent<CodeAnimation>().enabled = false;
+                    StickFightMaps.instance.StartCoroutine(StickFightMaps.doSomethingOnlyWhenInbattle(() =>
+                    {
+                        obj.GetComponent<CodeAnimation>().enabled = true;
+                    }));
+                }
+                
                 if (obj.name.IndexOf("(SpinMill)", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     var spin = obj.gameObject.AddComponent<Spin>();

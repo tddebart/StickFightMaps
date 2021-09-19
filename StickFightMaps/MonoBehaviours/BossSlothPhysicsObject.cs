@@ -94,7 +94,7 @@ namespace StickFightMaps.MonoBehaviours
             var rig = GetComponent<Rigidbody2D>();
             rig.simulated = true;
             rig.isKinematic = false;
-            if (name.Contains("custom"))
+            if (name.Contains("Box(Clone)(Clone)"))
                 gameObject.AddComponent<RemoveAfterSeconds>().seconds = 25f;
         }
         

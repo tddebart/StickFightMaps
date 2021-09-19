@@ -11,12 +11,10 @@ namespace StickFightMaps.Patches
         {
             StickFightMaps.instance.ExecuteAfterSeconds(10, () =>
             {
-                UnityEngine.Debug.LogWarning("Changed faces");
                 foreach (var ren in __instance.transform.Find("Art/Face").GetComponentsInChildren<SpriteRenderer>())
                 {
                     ren.sortingLayerName = "Player10";
                 }
-
             });
         }
     }

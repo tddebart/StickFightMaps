@@ -23,7 +23,7 @@ namespace StickFightMaps.MonoBehaviours
 
         private IEnumerator Spawning()
         {
-            if (!GameManager.instance.battleOngoing)
+            while (!GameManager.instance.battleOngoing)
             {
                 yield return null;
             }

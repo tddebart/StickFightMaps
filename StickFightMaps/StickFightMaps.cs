@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using BepInEx;
 using HarmonyLib;
 using Jotunn.Utils;
@@ -641,13 +642,15 @@ namespace StickFightMaps
             Destroy(obj.gameObject);
         }
 
-        // private void Update()
-        // {
-        //     if (Input.GetKeyDown(KeyCode.K) && PhotonNetwork.IsMasterClient)
-        //     {
-        //         var box = PhotonNetwork.Instantiate("4 Map Objects/Box", Vector3.zero, Quaternion.identity);
-        //         //box.AddComponent<SpringJoint2D>();
-        //     }
-        // }
+        public static IEnumerator doSomethingOnlyWhenInbattle(Action action)
+        {
+            while (!GameManager.instance.battleOngoing)
+            {
+                yield return null;
+            }
+
+            yield return new WaitUntil(() => GameManager.instance.battleOngoing);
+            action?.Invoke();
+        }
     }
 }
