@@ -106,6 +106,10 @@ Desert10
 ---
 
 ## Changelist
+- v0.3.1 
+    - fixed some collisions not working
+
+
 - v0.3.0 18 new Castle levels and 3 factory levels
     - New levels
         - Castle1
