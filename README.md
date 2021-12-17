@@ -106,6 +106,10 @@ Desert10
 ---
 
 ## Changelist
+- v0.3.2
+    - won't break mapsExtended anymore!!  
+  
+
 - v0.3.1 
     - fixed some collisions not working
 

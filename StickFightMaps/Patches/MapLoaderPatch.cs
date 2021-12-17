@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using HarmonyLib;
 using StickFightMaps.MonoBehaviours;
 using UnboundLib;
@@ -13,13 +14,29 @@ namespace StickFightMaps
     {
         private static void Postfix(Scene scene, MapManager __instance)
         {
+            var crates = scene.GetRootGameObjects()[0].transform.Find("stickfight/Crate's");
+            var physObjNames = new string[]
+            {
+                "SpikeBall", "(Chain2)", "PlatformLong", "ExtraLongPlatform", "Castle12Platform", "Castle13Platform",
+                "Castle14Platform", "Castle15Platform", "Castle16Platform", "Castle17Platform", "Factory1Platform", "Factory2Platform"
+            };
+            if(crates != null)
+            {
+                crates.GetComponentsInChildren<Transform>().Skip(1).Do(b => b.gameObject.AddComponent<BossSlothPhysicsObject>());
+            }
+
             foreach (Transform obj in scene.GetRootGameObjects()[0].GetComponentsInChildren<Transform>())
             {
+                if(obj.name.Contains("Box(hinge") || physObjNames.Any(n => obj.name.Contains(n)))
+                {
+                    obj.gameObject.AddComponent<BossSlothPhysicsObject>();
+                }
+                
                 //obj.gameObject.layer = 0;
                 if (obj.name.IndexOf("(Rope)", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
-                    obj.GetComponent<SpriteRenderer>().enabled = false;
-                    obj.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                    // obj.GetComponent<SpriteRenderer>().enabled = false;
+                    // obj.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
                     StickFightMaps.instance.ExecuteAfterSeconds(0.05f, () =>
                     {
                         GameObject.Destroy(obj.GetComponent<SpriteMask>());
@@ -64,7 +81,7 @@ namespace StickFightMaps
                     spin.startCurve = AnimationCurve.Constant(0,1,1);
                     spin.secondsToStart = 0.1f;
                 }
-                
+
                 if (obj.name.IndexOf("EDITOR", StringComparison.CurrentCultureIgnoreCase) >= 0)
                 {
                     obj.gameObject.SetActive(false);

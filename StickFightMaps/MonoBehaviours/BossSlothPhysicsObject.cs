@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MapsExt;
 using Photon.Pun;
 using Sonigon;
 using UnboundLib;
@@ -27,13 +28,38 @@ namespace StickFightMaps.MonoBehaviours
             networkObject.soundBoxImpact = Resources.Load<GameObject>("4 map objects/Box").GetComponent<NetworkPhysicsObject>().soundBoxImpact;
         }
         
-        [PunRPC]
-        public void doScaling(Vector3 globalScale)
+        private void Start()
         {
-            var transform1 = transform;
-            transform1.localScale = Vector3.one;
-            var lossyScale = transform1.lossyScale;
-            transform1.localScale = new Vector3 (globalScale.x/lossyScale.x, globalScale.y/lossyScale.y, globalScale.z/lossyScale.z);
+            var photonSpawned = (bool)this.GetComponent<PhotonMapObject>().GetFieldValue("photonSpawned"); // Need to get this with reflection
+            if (!photonSpawned) {
+                var lossyScale = transform.lossyScale;
+
+                var isHinge = gameObject.name.Contains("Box(hinge");
+                var isChain = gameObject.name.Contains("Chain2");
+                
+                MapsExtended.instance.OnPhotonMapObjectInstantiate(gameObject.GetComponent<PhotonMapObject>(), obj =>
+                {
+                    obj.transform.localScale = lossyScale;
+
+                    var view = obj.GetComponent<PhotonView>();
+                    if (isHinge)
+                    {
+                        if(obj.name[8] == 'R')
+                        {
+                            view.RPC("RPCA_SetupHinge", RpcTarget.All, true);
+                        }
+                        else
+                        {
+                            view.RPC("RPCA_SetupHinge", RpcTarget.All, false);
+                        }
+                    }
+
+                    if (isChain)
+                    {
+                        view.RPC("RPCA_SetupChain", RpcTarget.All, 2);
+                    }
+                });
+            }
         }
 
         [PunRPC]
@@ -97,7 +123,7 @@ namespace StickFightMaps.MonoBehaviours
             if (name.Contains("Box(Clone)(Clone)"))
                 gameObject.AddComponent<RemoveAfterSeconds>().seconds = 25f;
         }
-        
+
         [PunRPC]
         public void RPCA_SetupChain(int chainID)
         {
@@ -110,16 +136,16 @@ namespace StickFightMaps.MonoBehaviours
                 Destroy(obj.transform.GetChild(0).gameObject);
                 //Destroy(obj.transform.GetChild(1).gameObject);
             }
-            
+
             var spriteObj = new GameObject("sprite");
             spriteObj.layer = 17;
             spriteObj.transform.parent = obj.transform;
             var ren = spriteObj.AddComponent<SpriteRenderer>();
             ren.sprite = StickFightMaps.levelObjects.LoadAsset<Sprite>("Castle_Chain" + chainID);
-            ren.color = new Color(0.4191176f,0.4191176f,0.4191176f);
+            ren.color = new Color(0.4191176f, 0.4191176f, 0.4191176f);
             spriteObj.transform.localScale = new Vector3(1.5f, 1.05f, 1);
             spriteObj.transform.localPosition = Vector3.zero;
-            spriteObj.transform.localRotation = Quaternion.Euler(new Vector3(0,0,90));
+            spriteObj.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
 
             // var shadowObj = new GameObject("shadow");
             // shadowObj.transform.parent = obj.transform;
@@ -145,11 +171,8 @@ namespace StickFightMaps.MonoBehaviours
             damageEvent.damageEvent.AddListener(() =>
             {
                 var prevCol = new Color(0.4191176f, 0.4191176f, 0.4191176f);
-                ren.color = new Color(0.7f,0.7f,0.7f);
-                StickFightMaps.instance.ExecuteAfterSeconds(0.1f, () =>
-                {
-                    ren.color = prevCol;
-                });
+                ren.color = new Color(0.7f, 0.7f, 0.7f);
+                StickFightMaps.instance.ExecuteAfterSeconds(0.1f, () => { ren.color = prevCol; });
             });
 
             spriteObj.AddComponent<BoxCollider2D>();

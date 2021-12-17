@@ -3,6 +3,7 @@ using System.Collections;
 using BepInEx;
 using HarmonyLib;
 using Jotunn.Utils;
+using MapsExt;
 using Photon.Pun;
 using StickFightMaps.MonoBehaviours;
 using UnboundLib.Utils;
@@ -18,7 +19,7 @@ namespace StickFightMaps
         
         private const string ModId = "com.bosssloth.rounds.StickFightMaps";
         private const string ModName = "StickFightMaps";
-        public const string Version = "0.3.1";
+        public const string Version = "0.3.2";
 
         internal static AssetBundle levelAsset;
         internal static AssetBundle levelObjects;
@@ -60,7 +61,7 @@ namespace StickFightMaps
             customBox.transform.Translate(1000,1000,0);
 
             PhotonNetwork.PrefabPool.RegisterPrefab("customBox", customBox);
-            
+
             #region DESERT
 
             #region Create CrateReal
@@ -73,7 +74,7 @@ namespace StickFightMaps
             // Add Crate Mono
             crate.AddComponent<Crate>();
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("CrateReal", crate);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Crate2", crate);
             #endregion
 
             #region Create CrateRealBig
@@ -87,7 +88,7 @@ namespace StickFightMaps
             // Add Crate Mono
             crateBig.AddComponent<Crate>();
             
-            PhotonNetwork.PrefabPool.RegisterPrefab("CrateRealBig", crateBig);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Crate2Big", crateBig);
 
             #endregion
             
@@ -102,64 +103,10 @@ namespace StickFightMaps
             // Add Crate Mono
             crateLong.AddComponent<Crate>();
             
-            PhotonNetwork.PrefabPool.RegisterPrefab("CrateLongReal", crateLong);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/CrateLong", crateLong);
 
             #endregion
 
-            // #region Create CubeLong
-            // // Create CrateLongReal
-            // var cubeLong = levelObjects.LoadAsset<GameObject>("CubeLong");
-            //
-            // // Add physics object
-            // cubeLong.AddComponent<BossSlothPhysicsObject>().DoThings();
-            //
-            // PhotonNetwork.PrefabPool.RegisterPrefab("CubeLong", cubeLong);
-            //
-            // #endregion
-            //
-            // #region Create CubeLongReal
-            // // Create CrateLongReal
-            // var CubeLongStripe = levelObjects.LoadAsset<GameObject>("CubeLongStripe");
-            //
-            // // Add physics object
-            // CubeLongStripe.AddComponent<BossSlothPhysicsObject>().DoThings();
-            //
-            // PhotonNetwork.PrefabPool.RegisterPrefab("CubeLongStripe", CubeLongStripe);
-            //
-            // #endregion
-            //
-            // #region Create CrateSpin
-            // // Create CrateSpin
-            // var cubeSpin = levelObjects.LoadAsset<GameObject>("CubeSpinPart");
-            //
-            // // Add physics object
-            // cubeSpin.AddComponent<BossSlothPhysicsObject>().DoThings();
-            // cubeSpin.AddComponent<SpinPart>();
-            //
-            // PhotonNetwork.PrefabPool.RegisterPrefab("CubeSpinPart", cubeSpin);
-            //
-            // #endregion
-            //
-            // #region Create Bomb
-            // // Create CrateSpin
-            // var bomb = levelObjects.LoadAsset<GameObject>("BombReal");
-            //
-            // // Add physics object
-            // bomb.AddComponent<BossSlothPhysicsObject>().DoThings();
-            //
-            // var objDelay = bomb.AddComponent<SpawnObjectAfterDelay>();
-            // //objDelay.objectToSpawn = levelObjects.LoadAsset<GameObject>("A_Explosion_Timed_Detonation");
-            // objDelay.objectToSpawn = levelObjects.LoadAsset<GameObject>("ExplosionBig");
-            // objDelay.secondsBeforeSpawn = 20;
-            // objDelay.removeSelf = true;
-            // objDelay.specificSpawnRotation = new Vector3(0, 90, 0);
-            //
-            // bomb.AddComponent<Bomb>();
-            //
-            // PhotonNetwork.PrefabPool.RegisterPrefab("Bomb", bomb);
-            //
-            // #endregion
-            
             #endregion
 
             #region CASTLE
@@ -180,7 +127,7 @@ namespace StickFightMaps
             //     hinge.runAwake = true;
             // });
             
-            PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorL", trapDoorL);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Box(hingeL)", trapDoorL);
             
             #endregion
             
@@ -200,7 +147,7 @@ namespace StickFightMaps
             //     hinge2.runAwake = true;
             // });
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("trapDoorR", trapDoorR);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Box(hingeR)", trapDoorR);
             
             #endregion
             
@@ -229,7 +176,7 @@ namespace StickFightMaps
             }
             
             
-            PhotonNetwork.PrefabPool.RegisterPrefab("spikeBall", spikeball);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/SpikeBall", spikeball);
             
             #endregion
             
@@ -244,7 +191,7 @@ namespace StickFightMaps
             //Destroy(chain.GetComponent<DestructibleBoxDestruction>());
             chain.name = "Chain";
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("chain", chain);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/(Chain2)", chain);
             
             #endregion
             
@@ -258,7 +205,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("platformLong", platLong);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/PlatformLong", platLong);
             
             #endregion
             
@@ -272,7 +219,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("extraLongPlatform", extraLongPlat);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/ExtraLongPlatform", extraLongPlat);
             
             #endregion
 
@@ -288,7 +235,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle12Platform1", castle12Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle12Platform1", castle12Platform1);
             
             #endregion
             
@@ -302,7 +249,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle12Platform2", castle12Platform2);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle12Platform2", castle12Platform2);
             
             #endregion
             
@@ -316,7 +263,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle12Platform3", castle12Platform3);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle12Platform3", castle12Platform3);
             
             #endregion
             
@@ -334,7 +281,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform1", castle13Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle13Platform1", castle13Platform1);
             
             #endregion
             
@@ -348,7 +295,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform2", castle13Platform2);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle13Platform2", castle13Platform2);
             
             #endregion
             
@@ -362,7 +309,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform3", castle13Platform3);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle13Platform3", castle13Platform3);
             
             #endregion
             
@@ -376,7 +323,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle13Platform4", castle13Platform4);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle13Platform4", castle13Platform4);
 
             #endregion
             
@@ -393,7 +340,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("scaryBall", scaryBall);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/ScaryBall", scaryBall);
 
             #endregion
 
@@ -409,7 +356,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle15Platform1", castle15Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle15Platform1", castle15Platform1);
             
             #endregion
             
@@ -423,7 +370,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle15Platform2", castle15Platform2);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle15Platform2", castle15Platform2);
             
             #endregion
 
@@ -437,7 +384,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle15Platform3", castle15Platform3);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle15Platform3", castle15Platform3);
             
             #endregion
 
@@ -455,7 +402,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle16Platform1", castle16Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle16Platform1", castle16Platform1);
             
             #endregion
             
@@ -469,7 +416,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle16Platform2", castle16Platform2);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle16Platform2", castle16Platform2);
             
             #endregion
 
@@ -487,7 +434,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform1", castle17Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle17Platform1", castle17Platform1);
             
             #endregion
             
@@ -501,7 +448,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform2", castle17Platform2);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle17Platform2", castle17Platform2);
             
             #endregion
 
@@ -515,7 +462,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform3", castle17Platform3);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle17Platform3", castle17Platform3);
             
             #endregion
             
@@ -529,7 +476,7 @@ namespace StickFightMaps
                 trns.gameObject.layer = 17;
             }
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("castle17Platform4", castle17Platform4);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Castle17Platform4", castle17Platform4);
             
             #endregion
 
@@ -555,7 +502,7 @@ namespace StickFightMaps
             var phys = factory1Platform1.AddComponent<PhysSpin>();
             phys.spinAmount = 300000;
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("factory1Platform1", factory1Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Factory1Platform1", factory1Platform1);
             
             #endregion
 
@@ -575,7 +522,7 @@ namespace StickFightMaps
             var phys1 = factory2Platform1.AddComponent<PhysSpin>();
             phys1.spinAmount = 1000000;
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("factory2Platform1", factory2Platform1);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Factory2Platform1", factory2Platform1);
             
             #endregion
             
@@ -591,7 +538,7 @@ namespace StickFightMaps
             var phys2 = factory2Platform2.AddComponent<PhysSpin>();
             phys2.spinAmount = 1000000;
 
-            PhotonNetwork.PrefabPool.RegisterPrefab("factory2Platform2", factory2Platform2);
+            PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Factory2Platform2", factory2Platform2);
             
             #endregion
 
