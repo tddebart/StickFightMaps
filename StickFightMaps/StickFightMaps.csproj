@@ -53,12 +53,8 @@
             <HintPath>..\..\..\..\SteamLibrary\steamapps\common\ROUNDS\Rounds_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
 
-        <Reference Include="MapsExtended, Version=0.9.3.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\olavim-MapsExtended\MapsExtended.dll</HintPath>
-        </Reference>
-
-        <Reference Include="MapsExtended.Editor, Version=0.9.3.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\olavim-MapsExtendedEditor\MapsExtended.Editor.dll</HintPath>
+        <Reference Include="MapsExtended, Version=0.9.2.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\MapsExtended\MapsExtended.dll</HintPath>
         </Reference>
         <Reference Include="MMHOOK_Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\willis81808-MMHook\MMHOOK_Assembly-CSharp.dll</HintPath>
@@ -76,7 +72,7 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnboundLib, Version=2.7.1.0, Culture=neutral, PublicKeyToken=null">
+        <Reference Include="UnboundLib, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>C:\Users\tddeb\AppData\Roaming\r2modmanPlus-local\ROUNDS\profiles\Default\BepInEx\plugins\willis81808-UnboundLib\UnboundLib.dll</HintPath>
         </Reference>
         <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -124,10 +120,10 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Extensions\PlayerVelocityExtension.cs" />
+        <Compile Include="MapsExtendedObjects.cs" />
         <Compile Include="MonoBehaviours\Bomb.cs" />
         <Compile Include="MonoBehaviours\BossSlothPhysicsObject.cs" />
         <Compile Include="MonoBehaviours\BoxSpawner.cs" />
-        <Compile Include="MonoBehaviours\Crate.cs" />
         <Compile Include="MonoBehaviours\CreateHinge.cs" />
         <Compile Include="MonoBehaviours\FallingCollision.cs" />
         <Compile Include="MonoBehaviours\FallingPlatform.cs" />

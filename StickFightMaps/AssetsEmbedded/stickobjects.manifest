@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 151699764
+CRC: 3299015321
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 25816dfbaf247de8da65488be0e1e748
+    Hash: dc85673c8606a2489b06b34cb5c490d1
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2eea88415063c640db19c72b59a568cd
@@ -104,18 +104,25 @@ Assets:
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/BombRearOld.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/CubeSpinPart.prefab
 - Assets/Texture2D/Castle_Platform1.png
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Tree3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle17/Castle17Platform2.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle_Platform3(Fall).prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/PlatformLong.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform1.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Tree1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/ExtraLongPlatform.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle17/Castle17Platform3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/Factory12/TreadMill.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/SpikeBall.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/GroundGrassWoods.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform3.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/A_Explosion_Timed_Detonation.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Lantern1.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Stone4.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle12/Castle12Platform2.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Stone3.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Tree2.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle15/Castle15Platform1.prefab
 - Assets/Scene/Stickfight/0 Prefabs/2 Desert/CrateRealBig.prefab
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle14/ScaryBall.prefab
@@ -132,7 +139,10 @@ Assets:
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle16/Castle16Platform1.prefab
 - Assets/Texture2D/Crate1.png
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/Factory2/Factory2Platform1.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/GroundWoods.prefab
 - Assets/Scene/Stickfight/0 Prefabs/3 Factory/BombReal.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/BushWoods.prefab
 - Assets/Texture2D/Castle_Chain2.png
 - Assets/Scene/Stickfight/0 Prefabs/4 Castle/Castle13/Castle13Platform2.prefab
+- Assets/Scene/Stickfight/0 Prefabs/1 Woods/Stone1.prefab
 Dependencies: []

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using MapsExt;
 using Photon.Pun;
-using Sonigon;
 using UnboundLib;
 using UnityEngine;
 using UnityEngine.Events;
@@ -39,9 +38,10 @@ namespace StickFightMaps.MonoBehaviours
                 
                 MapsExtended.instance.OnPhotonMapObjectInstantiate(gameObject.GetComponent<PhotonMapObject>(), obj =>
                 {
-                    obj.transform.localScale = lossyScale;
-
                     var view = obj.GetComponent<PhotonView>();
+                    
+                    view.RPC("RPCA_DoScaling", RpcTarget.All , lossyScale);
+
                     if (isHinge)
                     {
                         if(obj.name[8] == 'R')
@@ -60,6 +60,12 @@ namespace StickFightMaps.MonoBehaviours
                     }
                 });
             }
+        }
+
+        [PunRPC]
+        public void RPCA_DoScaling(Vector3 newScale)
+        {
+            transform.localScale = newScale;
         }
 
         [PunRPC]

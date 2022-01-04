@@ -34,6 +34,7 @@ namespace StickFightMaps
         {
             var harmony = new Harmony(ModId);
             harmony.PatchAll();
+            
 
             instance = this;
             
@@ -70,10 +71,9 @@ namespace StickFightMaps
             
             // Add physics object
             crate.AddComponent<BossSlothPhysicsObject>().DoThings();
-            
-            // Add Crate Mono
-            crate.AddComponent<Crate>();
 
+            // mapObjects.Add(crate);            
+            //
             PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Crate2", crate);
             #endregion
 
@@ -84,10 +84,7 @@ namespace StickFightMaps
 
             // Add physics object
             crateBig.AddComponent<BossSlothPhysicsObject>().DoThings();
-            
-            // Add Crate Mono
-            crateBig.AddComponent<Crate>();
-            
+
             PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/Crate2Big", crateBig);
 
             #endregion
@@ -99,10 +96,7 @@ namespace StickFightMaps
             
             // Add physics object
             crateLong.AddComponent<BossSlothPhysicsObject>().DoThings();
-            
-            // Add Crate Mono
-            crateLong.AddComponent<Crate>();
-            
+
             PhotonNetwork.PrefabPool.RegisterPrefab("4 Map Objects/CrateLong", crateLong);
 
             #endregion
@@ -565,6 +559,10 @@ namespace StickFightMaps
             
 
             LevelManager.RegisterMaps(levelAsset, "StickFight");
+
+            // var assembly = Assembly.GetCallingAssembly();
+            
+            // this.ExecuteAfterSeconds(0.1f, () => {MapsExtended.instance.RegisterMapObjectsAction?.Invoke(assembly);});
         }
         
         public static IEnumerator setupThingsPlatform(Transform obj)
@@ -601,3 +599,4 @@ namespace StickFightMaps
         }
     }
 }
+

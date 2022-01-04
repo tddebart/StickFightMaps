@@ -11,9 +11,12 @@ namespace StickFightMaps.Patches
         {
             StickFightMaps.instance.ExecuteAfterSeconds(10, () =>
             {
-                foreach (var ren in __instance.transform.Find("Art/Face").GetComponentsInChildren<SpriteRenderer>())
+                if (__instance != null)
                 {
-                    ren.sortingLayerName = "Player10";
+                    foreach (var ren in __instance.transform.Find("Art/Face").GetComponentsInChildren<SpriteRenderer>())
+                    {
+                        ren.sortingLayerName = "Player10";
+                    }
                 }
             });
         }
