@@ -106,6 +106,10 @@ Desert10
 ---
 
 ## Changelist
+- v0.3.3
+    - fixed factory maps breaking physics  
+
+
 - v0.3.2
     - won't break mapsExtended anymore!!  
   

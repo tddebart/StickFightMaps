@@ -19,7 +19,7 @@ namespace StickFightMaps
         
         private const string ModId = "com.bosssloth.rounds.StickFightMaps";
         private const string ModName = "StickFightMaps";
-        public const string Version = "0.3.2";
+        public const string Version = "0.3.3";
 
         internal static AssetBundle levelAsset;
         internal static AssetBundle levelObjects;

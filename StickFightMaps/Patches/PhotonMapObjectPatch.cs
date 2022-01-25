@@ -21,4 +21,17 @@ namespace StickFightMaps.Patches
             }
         }
     }
+    
+    [HarmonyPatch(typeof(PhotonMapObject), "Go")]
+    class mapObjectGo
+    {
+        public static bool Prefix(PhotonMapObject __instance)
+        {
+            if (__instance == null)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
 }
